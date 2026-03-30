@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Curated Vintage</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <a href="index.html"><span>C</span>urated.</a>
+            </div>
+            
+            <div style="padding: 0 30px; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
+                <img src="assets/images/hero.png" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <div class="sidebar-user" style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 600; font-size: 14px; color: var(--text-primary);">Jane Doe</span>
+                    <span style="font-size: 12px; color: var(--secondary-color);">Curator Elite</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" class="sidebar-link active">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>Closet</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div style="padding: 20px 30px; display: flex; gap: 10px;">
+                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode" style="background-color: transparent; border: 1px solid var(--border-color);">🌙</button>
+                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL" style="background-color: transparent; border: 1px solid var(--border-color);">⇄</button>
+            </div>
+
+            <a href="index.html" class="sidebar-logout" id="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="dash-header">
+                <div>
+                    <h1 style="font-size: 28px; margin-bottom: 5px;">Welcome back, Jane.</h1>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Here is what's happening in your archive today.</p>
+                </div>
+                
+                <button class="menu-toggle" id="sidebar-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </header>
+
+            <!-- METRICS GRID -->
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <span class="metric-title">Saved Items</span>
+                        <i class="fa-solid fa-shirt" style="color: var(--secondary-color); font-size: 20px;"></i>
+                    </div>
+                    <div class="metric-value">12</div>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+2</span> since last week</p>
+                </div>
+                <div class="metric-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <span class="metric-title">Wishlist</span>
+                        <i class="fa-solid fa-heart" style="color: var(--secondary-color); font-size: 20px;"></i>
+                    </div>
+                    <div class="metric-value">45</div>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+5</span> since last week</p>
+                </div>
+                <div class="metric-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <span class="metric-title">New Arrivals Alerts</span>
+                        <i class="fa-solid fa-bell" style="color: var(--secondary-color); font-size: 20px;"></i>
+                    </div>
+                    <div class="metric-value">3</div>
+                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;">Matching your preferences</p>
+                </div>
+            </div>
+
+            <!-- RECENT ACTIVITY / CARDS -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                <!-- Wishlist Preview -->
+                <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                        <h3 style="font-size: 20px;">Recently Added to Wishlist</h3>
+                        <a href="#" style="color: var(--secondary-color); font-weight: 500; font-size: 14px;">View All</a>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div class="card" style="box-shadow: none;">
+                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="assets/images/product.png" alt="Item"></div>
+                            <div class="card-body" style="padding: 15px;">
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">90s Slip Dress</h4>
+                                <p style="color: var(--text-secondary); font-size: 13px;">$120</p>
+                            </div>
+                        </div>
+                        <div class="card" style="box-shadow: none;">
+                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="assets/images/product.png" alt="Item"></div>
+                            <div class="card-body" style="padding: 15px;">
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">Leather Moto</h4>
+                                <p style="color: var(--text-secondary); font-size: 13px;">$280</p>
+                            </div>
+                        </div>
+                        <div class="card" style="box-shadow: none;">
+                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="assets/images/product.png" alt="Item"></div>
+                            <div class="card-body" style="padding: 15px;">
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">Silk Scarf</h4>
+                                <p style="color: var(--text-secondary); font-size: 13px;">$45</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggested / Updates -->
+                <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                    <h3 style="font-size: 20px; margin-bottom: 30px;">Curator Updates</h3>
+                    
+                    <ul style="display: flex; flex-direction: column; gap: 20px;">
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">New Era Drop Live</h4>
+                                <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
+                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">2 hours ago</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">Price Drop Alert</h4>
+                                <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
+                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">1 day ago</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 14px; margin-bottom: 5px;">Order Delivered</h4>
+                                <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered.</p>
+                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">3 days ago</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Media query specific for dashboard responsiveness added in CSS -->
+    <style>
+        @media (max-width: 768px) {
+            #sidebar-toggle { display: block !important; }
+            .grid-template-columns { grid-template-columns: 1fr !important; }
+            main > div:last-child { grid-template-columns: 1fr; }
+            .sidebar-user { display: inline-flex !important; }
+            .sidebar.active .sidebar-user { display: inline-flex !important; }
+        }
+    </style>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
