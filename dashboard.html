@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account | Curated Vintage Store</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>Customer Dashboard | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -29,29 +29,30 @@
             </div>
 
             <nav class="sidebar-menu">
-                <a href="#" class="sidebar-link active">
+                <a href="#" class="sidebar-link active" data-section="profile">
                     <i class="fa-solid fa-user"></i>
                     <span>Profile</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-section="closet">
                     <i class="fa-solid fa-shirt"></i>
                     <span>Closet</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-section="wishlist">
                     <i class="fa-solid fa-heart"></i>
                     <span>Wishlist</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-section="notifications">
                     <i class="fa-solid fa-bell"></i>
                     <span>Notifications</span>
                 </a>
-                <a href="#" class="sidebar-link">
+                <a href="#" class="sidebar-link" data-section="settings">
                     <i class="fa-solid fa-gear"></i>
                     <span>Settings</span>
                 </a>
             </nav>
 
             <div style="padding: 20px 30px; display: flex; gap: 10px;">
+                <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
                 <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode" style="background-color: transparent; border: 1px solid var(--border-color);">🌙</button>
                 <button class="icon-btn" id="rtl-toggle" title="Toggle RTL" style="background-color: transparent; border: 1px solid var(--border-color);">⇄</button>
             </div>
@@ -61,132 +62,376 @@
                 <span>Logout</span>
             </a>
         </aside>
-
+        
         <!-- MAIN CONTENT -->
         <main class="main-content">
-            <header class="dash-header">
-                <div>
-                    <h1 style="font-size: 28px; margin-bottom: 5px;">Welcome back, Jane.</h1>
-                    <p style="color: var(--text-secondary); font-size: 14px;">Here is what's happening in your archive today.</p>
+            <!-- PROFILE SECTION -->
+            <div id="profile" class="dashboard-section active">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    
+                    <div class="dash-mobile-header-text">
+                        <h1 style="font-size: 28px; margin-bottom: 5px;">Welcome back, Jane.</h1>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Here is what's happening in your archive today.</p>
+                    </div>
+                </header>
+
+                <!-- METRICS GRID -->
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                            <span class="metric-title">Saved Items</span>
+                            <i class="fa-solid fa-shirt" style="color: var(--secondary-color); font-size: 20px;"></i>
+                        </div>
+                        <div class="metric-value">12</div>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+2</span> since last week</p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                            <span class="metric-title">Wishlist</span>
+                            <i class="fa-solid fa-heart" style="color: var(--secondary-color); font-size: 20px;"></i>
+                        </div>
+                        <div class="metric-value">45</div>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+5</span> since last week</p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                            <span class="metric-title">New Arrivals Alerts</span>
+                            <i class="fa-solid fa-bell" style="color: var(--secondary-color); font-size: 20px;"></i>
+                        </div>
+                        <div class="metric-value">3</div>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;">Matching your preferences</p>
+                    </div>
                 </div>
+
+                <!-- RECENT ACTIVITY / CARDS -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+                    <!-- Wishlist Preview -->
+                    <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                            <h3 style="font-size: 20px;">Recently Added to Wishlist</h3>
+                            <a href="#" style="color: var(--secondary-color); font-weight: 500; font-size: 14px;">View All</a>
+                        </div>
+                        
+                        <div class="grid-3-resp" style="gap: 20px;">
+                            <div class="card" style="box-shadow: none;">
+                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=400&auto=format&fit=crop" alt="90s Slip Dress"></div>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">90s Slip Dress</h4>
+                                    <p style="color: var(--text-secondary); font-size: 13px;">$120</p>
+                                </div>
+                            </div>
+                            <div class="card" style="box-shadow: none;">
+                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=400&auto=format&fit=crop" alt="Leather Moto"></div>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">Leather Moto</h4>
+                                    <p style="color: var(--text-secondary); font-size: 13px;">$280</p>
+                                </div>
+                            </div>
+                            <div class="card" style="box-shadow: none;">
+                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=400&auto=format&fit=crop" alt="Silk Scarf"></div>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">Silk Scarf</h4>
+                                    <p style="color: var(--text-secondary); font-size: 13px;">$45</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested / Updates -->
+                    <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                        <h3 style="font-size: 20px; margin-bottom: 30px;">Curator Updates</h3>
+                        
+                        <ul style="display: flex; flex-direction: column; gap: 20px;">
+                            <li style="display: flex; gap: 15px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                    <i class="fa-solid fa-box-open"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">New Archive Drop Live</h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
+                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">2 hours ago</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 15px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                    <i class="fa-solid fa-tag"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">Price Drop Alert</h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
+                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">1 day ago</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 15px; align-items: flex-start;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                    <i class="fa-solid fa-truck"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 14px; margin-bottom: 5px;">Order Delivered</h4>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered.</p>
+                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">3 days ago</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLOSET SECTION -->
+            <div id="closet" class="dashboard-section">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="dash-mobile-header-text">
+                        <h2 style="font-size: 28px;">Your Virtual Archive</h2>
+                    </div>
+                </header>
                 
-                <button class="menu-toggle" id="sidebar-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </header>
+                <div class="closet-grid">
+                    <div class="closet-item">
+                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Vintage Blazer">
+                        <div class="closet-details">
+                            <h4 style="font-size: 14px;">1970s Wool Blazer</h4>
+                            <p class="closet-date">Vault ID: #AR-1024 • Added Mar 2026</p>
+                        </div>
+                    </div>
+                    <div class="closet-item">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Statement Shirt">
+                        <div class="closet-details">
+                            <h4 style="font-size: 14px;">Patterned Silk Shirt</h4>
+                            <p class="closet-date">Vault ID: #AR-1056 • Added Feb 2026</p>
+                        </div>
+                    </div>
+                    <div class="closet-item">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Evening Gown">
+                        <div class="closet-details">
+                            <h4 style="font-size: 14px;">Velvet Evening Gown</h4>
+                            <p class="closet-date">Vault ID: #AR-1089 • Added Jan 2026</p>
+                        </div>
+                    </div>
+                    <div class="closet-item">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Knitwear">
+                        <div class="closet-details">
+                            <h4 style="font-size: 14px;">Hand-knit Mohair Cardigan</h4>
+                            <p class="closet-date">Vault ID: #AR-1102 • Added Dec 2025</p>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- METRICS GRID -->
-            <div class="metric-grid">
-                <div class="metric-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <span class="metric-title">Saved Items</span>
-                        <i class="fa-solid fa-shirt" style="color: var(--secondary-color); font-size: 20px;"></i>
+                <!-- ARCHIVE INSIGHTS SECTION (NEW) -->
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <span class="insight-value">4.5/5</span>
+                        <span class="insight-label">Avg Condition</span>
                     </div>
-                    <div class="metric-value">12</div>
-                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+2</span> since last week</p>
-                </div>
-                <div class="metric-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <span class="metric-title">Wishlist</span>
-                        <i class="fa-solid fa-heart" style="color: var(--secondary-color); font-size: 20px;"></i>
+                    <div class="insight-card">
+                        <span class="insight-value">12</span>
+                        <span class="insight-label">Items Owned</span>
                     </div>
-                    <div class="metric-value">45</div>
-                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+5</span> since last week</p>
-                </div>
-                <div class="metric-card">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <span class="metric-title">New Arrivals Alerts</span>
-                        <i class="fa-solid fa-bell" style="color: var(--secondary-color); font-size: 20px;"></i>
+                    <div class="insight-card">
+                        <span class="insight-value">$2.4k</span>
+                        <span class="insight-label">Est. Value</span>
                     </div>
-                    <div class="metric-value">3</div>
-                    <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;">Matching your preferences</p>
+                    <div class="insight-card">
+                        <span class="insight-value">100%</span>
+                        <span class="insight-label">Authenticated</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- RECENT ACTIVITY / CARDS -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
-                <!-- Wishlist Preview -->
-                <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                        <h3 style="font-size: 20px;">Recently Added to Wishlist</h3>
-                        <a href="#" style="color: var(--secondary-color); font-weight: 500; font-size: 14px;">View All</a>
+            <!-- ORDERS SECTION (NEW) -->
+            <div id="orders" class="dashboard-section">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="dash-mobile-header-text">
+                        <h2 style="font-size: 28px;">Archive Orders</h2>
                     </div>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                        <div class="card" style="box-shadow: none;">
-                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=400&auto=format&fit=crop" alt="90s Slip Dress"></div>
-                            <div class="card-body" style="padding: 15px;">
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">90s Slip Dress</h4>
-                                <p style="color: var(--text-secondary); font-size: 13px;">$120</p>
-                            </div>
+                </header>
+                <div class="notification-list">
+                    <div class="notification-item">
+                        <div class="notification-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Order #CV-8923</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Delivered on Mar 25, 2026. Items: 1</p>
                         </div>
-                        <div class="card" style="box-shadow: none;">
-                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=400&auto=format&fit=crop" alt="Leather Moto"></div>
-                            <div class="card-body" style="padding: 15px;">
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">Leather Moto</h4>
-                                <p style="color: var(--text-secondary); font-size: 13px;">$280</p>
-                            </div>
-                        </div>
-                        <div class="card" style="box-shadow: none;">
-                            <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1601924582970-87846497042a?q=80&w=400&auto=format&fit=crop" alt="Silk Scarf"></div>
-                            <div class="card-body" style="padding: 15px;">
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">Silk Scarf</h4>
-                                <p style="color: var(--text-secondary); font-size: 13px;">$45</p>
-                            </div>
-                        </div>
+                        <button class="btn btn-secondary" style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">View Order</button>
                     </div>
-                </div>
-
-                <!-- Suggested / Updates -->
-                <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
-                    <h3 style="font-size: 20px; margin-bottom: 30px;">Curator Updates</h3>
-                    
-                    <ul style="display: flex; flex-direction: column; gap: 20px;">
-                        <li style="display: flex; gap: 15px; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
-                                <i class="fa-solid fa-box-open"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">New Archive Drop Live</h4>
-                                <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
-                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">2 hours ago</span>
-                            </div>
-                        </li>
-                        <li style="display: flex; gap: 15px; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
-                                <i class="fa-solid fa-tag"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">Price Drop Alert</h4>
-                                <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
-                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">1 day ago</span>
-                            </div>
-                        </li>
-                        <li style="display: flex; gap: 15px; align-items: flex-start;">
-                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
-                                <i class="fa-solid fa-truck"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-size: 14px; margin-bottom: 5px;">Order Delivered</h4>
-                                <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered.</p>
-                                <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">3 days ago</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="notification-item">
+                        <div class="notification-icon"><i class="fa-solid fa-truck"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Order #CV-8750</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Shipped. Estimated arrival: Tomorrow.</p>
+                        </div>
+                        <button class="btn btn-secondary" style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">Track Order</button>
+                    </div>
                 </div>
             </div>
 
+            <!-- WISHLIST SECTION (REDESIGNED) -->
+            <div id="wishlist" class="dashboard-section">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="dash-mobile-header-text">
+                        <h2 style="font-size: 28px;">Your Wishlist</h2>
+                    </div>
+                </header>
+                <div class="wishlist-table">
+                    <div class="wishlist-row">
+                        <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="90s Slip Dress">
+                        <div class="wishlist-info">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">90s Slip Dress</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Womenswear • Silk</p>
+                        </div>
+                        <span class="wishlist-price">$120</span>
+                        <span class="wishlist-status status-low-stock">Only 1 Left</span>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                    </div>
+                    <div class="wishlist-row">
+                        <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="Leather Moto">
+                        <div class="wishlist-info">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Leather Moto Jacket</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Outerwear • Distressed Leather</p>
+                        </div>
+                        <span class="wishlist-price">$280</span>
+                        <span class="wishlist-status status-in-stock">In Stock</span>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                    </div>
+                    <div class="wishlist-row">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="Vintage Trench">
+                        <div class="wishlist-info">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Double-Breasted Trench</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Outerwear • Cotton Gabardine</p>
+                        </div>
+                        <span class="wishlist-price">$350</span>
+                        <span class="wishlist-status status-in-stock">In Stock</span>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOTIFICATIONS SECTION -->
+            <div id="notifications" class="dashboard-section">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="dash-mobile-header-text">
+                        <h2 style="font-size: 28px;">Notifications</h2>
+                    </div>
+                </header>
+                <div class="notification-list">
+                    <div class="notification-item">
+                        <div class="notification-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">New Archive Drop Live</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
+                        </div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">2h ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon"><i class="fa-solid fa-tag"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Price Drop Alert</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
+                        </div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">1d ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon"><i class="fa-solid fa-truck"></i></div>
+                        <div style="flex-grow: 1;">
+                            <h4 style="font-size: 15px; margin-bottom: 5px;">Order Delivered</h4>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered to your NYC address.</p>
+                        </div>
+                        <span style="font-size: 12px; color: var(--text-secondary);">3d ago</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS SECTION -->
+            <div id="settings" class="dashboard-section">
+                <header class="dash-header">
+                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="dash-mobile-header-text">
+                        <h2 style="font-size: 28px;">Account Settings</h2>
+                    </div>
+                </header>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Personal Information</h3>
+                        <form style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" value="Jane Doe">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="jane.doe@example.com">
+                            </div>
+                            <button class="btn btn-primary" style="width: fit-content; height: 40px; margin-top: 10px;">Save Changes</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                        <h3 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Security</h3>
+                        <form style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" placeholder="••••••••">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" placeholder="Enter new password">
+                            </div>
+                            <button class="btn btn-primary" style="width: fit-content; height: 40px; margin-top: 10px;">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
     <!-- Media query specific for dashboard responsiveness added in CSS -->
     <style>
         @media (max-width: 768px) {
-            #sidebar-toggle { display: block !important; }
+            .dash-header {
+                display: flex !important;
+                align-items: center !important;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            .dash-mobile-header-text {
+                flex-grow: 1;
+                text-align: center;
+                margin-right: 40px; /* Offset for the 40px sidebar toggle to achieve true center */
+            }
+            .menu-toggle { display: block !important; }
             .grid-template-columns { grid-template-columns: 1fr !important; }
             main > div:last-child { grid-template-columns: 1fr; }
             .sidebar-user { display: inline-flex !important; }
             .sidebar.active .sidebar-user { display: inline-flex !important; }
+        }
+
+        /* Robust centering for closet cards in tablet view using Flexbox */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #closet .closet-grid {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 20px !important;
+            }
+            #closet .closet-item {
+                flex: 0 1 200px !important;
+                min-width: 250px !important;
+            }
         }
     </style>
     

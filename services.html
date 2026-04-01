@@ -4,43 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collections | Curated Vintage</title>
+    <title>Shop | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="services.html" class="nav-link active">Shop</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary"
-                        style="background-color: var(--secondary-color);">Dashboard</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
 
-            <div class="theme-toggles">
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
-            </div>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -50,7 +49,7 @@
             alt="Collections" class="hero-img">
         <div class="container">
             <div class="hero-content text-center" style="margin: 0 auto;">
-                <h1 class="hero-title">Our Collections</h1>
+                <h1 class="hero-title">Shop Collection</h1>
                 <p class="hero-subtitle">Browse our premium curation of vintage styles spanning across iconic decades.
                 </p>
             </div>
@@ -66,48 +65,40 @@
                     <h2 class="section-title" style="margin-bottom: 5px;">Womenswear</h2>
                     <p class="section-subtitle" style="margin-left: 0;">Timeless elegance from the 50s to the 90s.</p>
                 </div>
-                <a href="#" class="btn btn-secondary">View All</a>
             </div>
 
             <div class="grid-4">
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1549439602-43bbcb6d5882?q=80&w=800&auto=format&fit=crop"
-                            alt="60s Mod Dress"></div>
+                    <div class="card-img-wrap"><img src="assets/images/floral-dress.png" alt="60s Mod Dress"></div>
                     <div class="card-body">
                         <h3 class="card-title">60s Mod Dresses</h3>
                         <p class="card-price">From $120</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="1" data-name="60s Mod Dresses" data-price="$120" data-image="assets/images/floral-dress.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop"
-                            alt="70s Silk Blouse"></div>
+                    <div class="card-img-wrap"><img src="assets/images/silk_blouse.png" alt="70s Silk Blouse"></div>
                     <div class="card-body">
                         <h3 class="card-title">70s Silk Blouses</h3>
                         <p class="card-price">From $85</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="2" data-name="70s Silk Blouses" data-price="$85" data-image="assets/images/silk_blouse.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1539533113208-f6df81457413?q=80&w=800&auto=format&fit=crop"
-                            alt="80s Oversized Coat"></div>
+                    <div class="card-img-wrap"><img src="assets/images/trench-coat.png" alt="80s Oversized Coat"></div>
                     <div class="card-body">
                         <h3 class="card-title">80s Oversized Coats</h3>
                         <p class="card-price">From $250</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="3" data-name="80s Oversized Coats" data-price="$250" data-image="assets/images/trench-coat.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=800&auto=format&fit=crop"
-                            alt="90s Slip Skirt"></div>
+                    <div class="card-img-wrap"><img src="assets/images/slip_skirt.png" alt="90s Slip Skirt"
+                            style="object-fit: cover;"></div>
                     <div class="card-body">
                         <h3 class="card-title">90s Slip Skirts</h3>
                         <p class="card-price">From $60</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="4" data-name="90s Slip Skirts" data-price="$60" data-image="assets/images/slip_skirt.png">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -123,18 +114,16 @@
                     <h2 class="section-title" style="margin-bottom: 5px;">Menswear</h2>
                     <p class="section-subtitle" style="margin-left: 0;">Classic tailoring and rugged staples.</p>
                 </div>
-                <a href="#" class="btn btn-secondary">View All</a>
             </div>
 
             <div class="grid-4">
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1594932224012-c55034ec8749?q=80&w=800&auto=format&fit=crop"
-                            alt="Vintage Tailoring"></div>
+                    <div class="card-img-wrap"><img src="assets/images/Vintage Tailoring_2.png" alt="Vintage Tailoring">
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Vintage Tailoring</h3>
                         <p class="card-price">From $300</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="5" data-name="Vintage Tailoring" data-price="$300" data-image="assets/images/Vintage Tailoring_2.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
@@ -144,27 +133,24 @@
                     <div class="card-body">
                         <h3 class="card-title">Classic Leather</h3>
                         <p class="card-price">From $280</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="6" data-name="Classic Leather" data-price="$280" data-image="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=800&auto=format&fit=crop">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=800&auto=format&fit=crop"
-                            alt="Raw Denim"></div>
+                    <div class="card-img-wrap"><img src="assets/images/Raw Denim.png" alt="Raw Denim"></div>
                     <div class="card-body">
                         <h3 class="card-title">Raw Denim</h3>
                         <p class="card-price">From $150</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="7" data-name="Raw Denim" data-price="$150" data-image="assets/images/Raw Denim.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1556905055-8f358a7a4bb4?q=80&w=800&auto=format&fit=crop"
-                            alt="Heritage Knitwear"></div>
+                    <div class="card-img-wrap"><img src="assets/images/Heritage Knitwear.png" alt="Heritage Knitwear">
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Heritage Knitwear</h3>
                         <p class="card-price">From $95</p>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <button class="btn btn-primary buy-now-btn" data-id="8" data-name="Heritage Knitwear" data-price="$95" data-image="assets/images/Heritage Knitwear.png">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -180,7 +166,6 @@
                     <h2 class="section-title" style="margin-bottom: 5px;">Accessories</h2>
                     <p class="section-subtitle" style="margin-left: 0;">The perfect finishing touches.</p>
                 </div>
-                <a href="#" class="btn btn-secondary">View All</a>
             </div>
 
             <div class="grid-4">
@@ -190,63 +175,85 @@
                             alt="Costume Jewelry"></div>
                     <div class="card-body">
                         <h3 class="card-title">Costume Jewelry</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <p class="card-price">From $35</p>
+                        <button class="btn btn-primary buy-now-btn" data-id="9" data-name="Costume Jewelry" data-price="$35" data-image="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=800&auto=format&fit=crop">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1548036627-09bf8b4f707b?q=80&w=800&auto=format&fit=crop"
-                            alt="Designer Handbag"></div>
+                    <div class="card-img-wrap"><img src="assets/images/Designer Handbags.png" alt="Designer Handbag">
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">Designer Handbags</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <p class="card-price">From $120</p>
+                        <button class="btn btn-primary buy-now-btn" data-id="10" data-name="Designer Handbags" data-price="$120" data-image="assets/images/Designer Handbags.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=800&auto=format&fit=crop"
-                            alt="Silk Scarf"></div>
+                            src="assets/images/vintage-silk-scarves.png"
+                            alt="Silk Scarves"></div>
                     <div class="card-body">
                         <h3 class="card-title">Silk Scarves</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <p class="card-price">From $45</p>
+                        <button class="btn btn-primary buy-now-btn" data-id="11" data-name="Silk Scarves" data-price="$45" data-image="assets/images/vintage-silk-scarves.png">Buy Now</button>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1624222247516-746a394ec271?q=80&w=800&auto=format&fit=crop"
-                            alt="Leather Belt"></div>
+                    <div class="card-img-wrap"><img src="assets/images/Leather Belts.png" alt="Leather Belt"></div>
                     <div class="card-body">
                         <h3 class="card-title">Leather Belts</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
+                        <p class="card-price">From $55</p>
+                        <button class="btn btn-primary buy-now-btn" data-id="12" data-name="Leather Belts" data-price="$55" data-image="assets/images/Leather Belts.png">Buy Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: AUTHENTICATION -->
+    <!-- SECTION 4: AUTHENTICATION GUARANTEE -->
     <section class="section" style="background-color: var(--surface-color);">
-        <div class="container text-center">
-            <h2 class="section-title">The Authentication Guarantee</h2>
-            <p class="section-subtitle mb-50">Every piece in our shop undergoes a rigorous 5-point inspection.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Authentication Guarantee</h2>
+                <p class="section-subtitle">Every piece in our shop undergoes a rigorous 5-point inspection to ensure authenticity and quality.</p>
+            </div>
 
             <div class="grid-4">
-                <div>
-                    <i class="fa-solid fa-tag mb-30" style="font-size: 30px; color: var(--primary-color);"></i>
-                    <h4>Label Checking</h4>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Label & Fabric Analysis">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Label & Fabric Analysis</h3>
+                        <p class="card-text" style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">We perform meticulous point-by-point inspections of labels and fabric composition to ensure historical accuracy.</p>
+                    </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-magnifying-glass mb-30"
-                        style="font-size: 30px; color: var(--primary-color);"></i>
-                    <h4>Fabric Analysis</h4>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Authentication & Verification">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Authentication & Verification</h3>
+                        <p class="card-text" style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">Our expert team verifies every piece against our extensive database of vintage designer archives.</p>
+                    </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-check-double mb-30" style="font-size: 30px; color: var(--primary-color);"></i>
-                    <h4>Hardware Inspection</h4>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="Condition Grading">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Condition Grading</h3>
+                        <p class="card-text" style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">Every item receives a transparent condition grade, documenting any era-appropriate wear with full honesty.</p>
+                    </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-shirt mb-30" style="font-size: 30px; color: var(--primary-color);"></i>
-                    <h4>Stitching Verification</h4>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=800&auto=format&fit=crop" alt="Historical Preservation">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Historical Preservation</h3>
+                        <p class="card-text" style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">Beyond authentication, we professionally restore and preserve items to ensure they last for another generation.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -284,7 +291,7 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="blog.html">Journal</a></li>
                         <li><a href="pricing.html">Pricing Plan</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Shop</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">

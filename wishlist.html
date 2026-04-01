@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wishlist | Curated Vintage Store</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>My Wishlist | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .wishlist-header {
             padding: 80px 0 40px;
@@ -88,31 +88,34 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <nav class="navbar navbar-left-aligned">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
             
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Collections</a></li>
-                <li><a href="wishlist.html" class="nav-link active">Wishlist</a></li>
-                <li><a href="cart.html" class="nav-link">Cart</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
                 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
-                    <a href="register.html" class="btn btn-primary">Join Now</a>
+                    <a href="register.html" class="btn btn-primary">Signup</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
 
-            <div class="theme-toggles">
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
-            </div>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -272,31 +275,51 @@
             <div class="footer-grid">
                 <div class="footer-widget">
                     <h4 class="brand-logo"><span>C</span>urated.</h4>
-                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium
+                        vintage clothing globally.</p>
+                    <div class="social-icons">
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
+
                 <div class="footer-widget">
-                    <h4>Collections</h4>
+                    <h4>Shop</h4>
                     <ul>
+                        <li><a href="services.html">All Collections</a></li>
+                        <li><a href="services.html">New Arrivals</a></li>
                         <li><a href="services.html">Womenswear</a></li>
                         <li><a href="services.html">Menswear</a></li>
+                        <li><a href="services.html">Accessories</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-widget">
-                    <h4>Account</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a href="orders.html">Order History</a></li>
-                        <li><a href="wishlist.html">My Wishlist</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing Plan</a></li>
+                        <li><a href="services.html">Shop</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-widget">
-                    <h4>Support</h4>
+                    <h4>Contact Info</h4>
                     <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope"
+                                     style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1
+                                (234) 567-890</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion
+                                Ave, NY 10001</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Curated Vintage Store. All rights reserved.</p>
             </div>

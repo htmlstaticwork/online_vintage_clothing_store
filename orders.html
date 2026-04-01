@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Orders | Curated Vintage Store</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>My Orders | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .orders-section {
             padding: 80px 0;
         }
+
         .order-card {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -18,6 +20,7 @@
             margin-bottom: 30px;
             overflow: hidden;
         }
+
         .order-header {
             padding: 20px 30px;
             background-color: var(--hover-overlay);
@@ -26,10 +29,12 @@
             align-items: center;
             border-bottom: 1px solid var(--border-color);
         }
+
         .order-meta {
             display: flex;
             gap: 40px;
         }
+
         .meta-item span {
             display: block;
             font-size: 12px;
@@ -38,170 +43,141 @@
             letter-spacing: 1px;
             margin-bottom: 5px;
         }
+
         .meta-item p {
             font-weight: 600;
             font-size: 14px;
         }
+
         .order-body {
             padding: 30px;
         }
-        .order-status {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .status-shipped { background-color: #e3f2fd; color: #1976d2; }
-        .status-delivered { background-color: #e8f5e9; color: #2e7d32; }
-        .status-processing { background-color: #fff3e0; color: #f57c00; }
-
-        .tracking-stepper {
-            display: flex;
-            justify-content: space-between;
-            margin: 40px 0;
-            position: relative;
-        }
-        .tracking-stepper::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 50px;
-            right: 50px;
-            height: 2px;
-            background-color: var(--border-color);
-            z-index: 1;
-        }
-        .step {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            width: 100px;
-        }
-        .step-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--surface-color);
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            transition: var(--transition);
-        }
-        .step.active .step-icon {
-            border-color: var(--primary-color);
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-        .step.active p { font-weight: 600; color: var(--primary-color); }
-        .step p { font-size: 12px; color: var(--text-secondary); }
 
         .action-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 30px;
             margin-top: 50px;
         }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .action-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .action-grid > *:nth-child(3) {
+                grid-column: 1 / span 2;
+                justify-self: center;
+                width: calc(50% - 15px);
+            }
+        }
+
         .action-card {
-            background-color: var(--surface-color);
             padding: 30px;
+            background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
             text-align: center;
             transition: var(--transition);
+            cursor: pointer;
         }
-        .action-card:hover { border-color: var(--secondary-color); transform: translateY(-5px); }
-        .action-card i { font-size: 30px; color: var(--secondary-color); margin-bottom: 20px; }
+
+        .action-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .action-card i {
+            font-size: 30px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
 
         @media (max-width: 768px) {
-            .order-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-            .order-meta { flex-wrap: wrap; gap: 20px; }
-            .tracking-stepper { display: none; }
-            .action-grid { grid-template-columns: 1fr; }
+            .order-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <nav class="navbar navbar-left-aligned">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-            <button class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></button>
+            
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                <li><a href="orders.html" class="nav-link active">Orders</a></li>
-                <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+                
                 <div class="nav-ctas">
-                    <a href="cart.html" class="btn btn-secondary">Cart</a>
-                    <a href="services.html" class="btn btn-primary">Shop More</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Signup</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
+
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <section class="orders-section">
         <div class="container">
             <div class="section-header" style="text-align: left;">
+                <h1>Current Order</h1>
+                <p class="section-subtitle" style="margin: 0;">Confirm your selection before processing the shipment.</p>
+            </div>
+
+            <!-- DYNAMIC ORDER CARD -->
+            <div id="dynamic-order-container">
+                <!-- Product content will be injected here -->
+            </div>
+
+            <div class="section-header" style="text-align: left; margin-top: 80px;">
                 <h1>Archive of Style</h1>
-                <p class="section-subtitle" style="margin: 0;">Trace the journey of your unique vintage acquisitions.</p>
+                <p class="section-subtitle" style="margin: 0;">Trace the journey of your past vintage acquisitions.</p>
             </div>
 
             <!-- SECTION 1: ORDER HISTORY -->
             <div class="order-card">
                 <div class="order-header">
                     <div class="order-meta">
-                        <div class="meta-item"><span>Order Placed</span><p>Oct 14, 2026</p></div>
-                        <div class="meta-item"><span>Total</span><p>$540.00</p></div>
-                        <div class="meta-item"><span>Order #</span><p>CV-99210</p></div>
-                    </div>
-                    <a href="#" class="btn btn-secondary" style="height: 35px; font-size: 12px;">View Invoice</a>
-                </div>
-                <div class="order-body">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                        <span class="order-status status-shipped">Shipped</span>
-                        <p style="font-size: 14px; color: var(--text-secondary);">Est. Arrival: Oct 18, 2026</p>
-                    </div>
-                    
-                    <div style="display: flex; gap: 20px; align-items: center;">
-                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=100&auto=format&fit=crop" style="width: 60px; height: 80px; object-fit: cover; border-radius: 4px;">
-                        <div>
-                            <h4>70s Leather Jacket</h4>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Item ID: CUR-001</p>
+                        <div class="meta-item"><span>Order Placed</span>
+                            <p>Oct 14, 2026</p>
+                        </div>
+                        <div class="meta-item"><span>Total</span>
+                            <p>$540.00</p>
+                        </div>
+                        <div class="meta-item"><span>Order #</span>
+                            <p>CV-99210</p>
                         </div>
                     </div>
-
-                    <!-- SECTION 2: TRACKING -->
-                    <div class="tracking-stepper">
-                        <div class="step active"><div class="step-icon"><i class="fa-solid fa-check"></i></div><p>Confirmed</p></div>
-                        <div class="step active"><div class="step-icon"><i class="fa-solid fa-box-open"></i></div><p>Prepared</p></div>
-                        <div class="step active"><div class="step-icon"><i class="fa-solid fa-truck"></i></div><p>On the Way</p></div>
-                        <div class="step"><div class="step-icon"><i class="fa-solid fa-house-chimney"></i></div><p>Delivered</p></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order-card">
-                <div class="order-header">
-                    <div class="order-meta">
-                        <div class="meta-item"><span>Order Placed</span><p>Aug 02, 2026</p></div>
-                        <div class="meta-item"><span>Total</span><p>$350.00</p></div>
-                        <div class="meta-item"><span>Order #</span><p>CV-88102</p></div>
-                    </div>
-                    <span class="order-status status-delivered">Delivered</span>
                 </div>
                 <div class="order-body">
                     <div style="display: flex; gap: 20px; align-items: center;">
-                        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=100&auto=format&fit=crop" style="width: 60px; height: 80px; object-fit: cover; border-radius: 4px;">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=100&auto=format&fit=crop"
+                            style="width: 60px; height: 80px; object-fit: cover; border-radius: 4px;">
                         <div>
-                            <h4>Gold Plated Watch</h4>
-                            <span style="font-size: 12px; color: var(--secondary-color);">Curated Elite</span>
-                            <p style="font-size: 14px; color: var(--text-secondary);">Delivered on Aug 07, 2026</p>
-                            <a href="#" class="btn btn-primary mt-30" style="height: 35px; font-size: 12px; width: fit-content;">Purchase Again</a>
+                            <h4>70s Leather Jacket</h4>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Item ID: CUR-001 • Delivered Oct 18</p>
                         </div>
                     </div>
                 </div>
@@ -212,35 +188,20 @@
                 <div class="action-card">
                     <i class="fa-solid fa-rotate-left"></i>
                     <h3>Start a Return</h3>
-                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Easy 30-day window for all acquisitions.</p>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Easy 30-day window for
+                        all acquisitions.</p>
                 </div>
                 <div class="action-card">
                     <i class="fa-solid fa-headset"></i>
                     <h3>Need Support?</h3>
-                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Chat with our vintage specialists 24/7.</p>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Chat with our vintage
+                        specialists 24/7.</p>
                 </div>
                 <div class="action-card">
                     <i class="fa-solid fa-star"></i>
                     <h3>Rate Your Style</h3>
-                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Help others discover premium vintage.</p>
-                </div>
-            </div>
-
-            <!-- SECTION 4: INSIGHTS -->
-            <div class="section mt-50" style="background-color: var(--surface-color); border-radius: var(--border-radius); border: 1px solid var(--border-color); padding: 50px;">
-                <div style="display: flex; align-items: center; gap: 50px;">
-                    <div style="flex: 1;">
-                        <h2 style="font-size: 32px; margin-bottom: 20px;">Your Style Diary</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 30px;">Based on your purchase history, you are a <strong>"Modern Minimalist with a 70s Soul"</strong>.</p>
-                        <ul style="color: var(--text-secondary); list-style: disc; margin-left: 20px;">
-                            <li>Favoring: Earthy tones, Structured Leather</li>
-                            <li>Archive Specialty: Late 20th Century</li>
-                            <li>Archive Level: Curated Collector</li>
-                        </ul>
-                    </div>
-                    <div style="flex: 1; text-align: center;">
-                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=400&auto=format&fit=crop" style="width: 100%; border-radius: var(--border-radius);">
-                    </div>
+                    <p style="font-size: 14px; color: var(--text-secondary); margin-top: 10px;">Help others discover
+                        premium vintage discovery.</p>
                 </div>
             </div>
         </div>
@@ -249,17 +210,113 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="brand-logo"><span>C</span>urated.</h4>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium
+                        vintage clothing globally.</p>
+                    <div class="social-icons">
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="services.html">All Collections</a></li>
+                        <li><a href="services.html">New Arrivals</a></li>
+                        <li><a href="services.html">Womenswear</a></li>
+                        <li><a href="services.html">Menswear</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="pricing.html">Pricing Plan</a></li>
+                        <li><a href="services.html">Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope"
+                                    style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1
+                                (234) 567-890</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion
+                                Ave, NY 10001</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Curated Vintage Store. All rights reserved.</p>
-                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
-                </div>
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+            const container = document.getElementById('dynamic-order-container');
+            
+            if (selectedProduct && container) {
+                container.innerHTML = `
+                    <div class="order-card" style="border-left: 4px solid var(--secondary-color);">
+                        <div class="order-body" style="padding: 40px;">
+                            <div style="display: flex; gap: 40px; align-items: center;">
+                                <img src="${selectedProduct.image}" alt="${selectedProduct.name}" style="width: 150px; height: 200px; object-fit: cover; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                                <div style="flex-grow: 1;">
+                                    <span style="font-size: 12px; color: var(--secondary-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Processing Order</span>
+                                    <h2 style="font-size: 32px; margin: 10px 0;">${selectedProduct.name}</h2>
+                                    <p style="font-size: 24px; color: var(--text-primary); font-weight: 600; margin-bottom: 20px;">${selectedProduct.price}</p>
+                                    
+                                    <div style="display: flex; gap: 30px; margin-bottom: 30px; padding: 20px; background-color: var(--hover-overlay); border-radius: var(--border-radius);">
+                                        <div>
+                                            <span style="display: block; font-size: 12px; color: var(--text-secondary); text-transform: uppercase;">Quantity</span>
+                                            <p style="font-weight: 600;">1</p>
+                                        </div>
+                                        <div>
+                                            <span style="display: block; font-size: 12px; color: var(--text-secondary); text-transform: uppercase;">Status</span>
+                                            <p style="font-weight: 600; color: #f57c00;">Confirming Details</p>
+                                        </div>
+                                        <div>
+                                            <span style="display: block; font-size: 12px; color: var(--text-secondary); text-transform: uppercase;">Est. Ship Date</span>
+                                            <p style="font-weight: 600;">Within 24 Hours</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; gap: 15px;">
+                                        <button class="btn btn-primary" onclick="alert('Order Placed Successfully!')" style="padding: 0 40px;">Confirm & Pay</button>
+                                        <button class="btn btn-secondary" onclick="window.location.href='services.html'">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (container) {
+                container.innerHTML = `
+                    <div class="order-card" style="padding: 80px 40px; text-align: center;">
+                        <i class="fa-solid fa-basket-shopping" style="font-size: 60px; color: var(--border-color); margin-bottom: 30px;"></i>
+                        <h2>No Active Order Found</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 30px;">Browse our archive to find your next vintage acquisition.</p>
+                        <a href="services.html" class="btn btn-primary">Go to Shop</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
 </body>
+
 </html>

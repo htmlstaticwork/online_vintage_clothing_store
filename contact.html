@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Curated Vintage Store</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>Contact Us | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Contact page: 3 cards flex layout */
+        .contact-cards-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .contact-cards-flex > .card {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+        /* Tablet: 2 equal cards on row 1, 3rd card centered on row 2 */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .contact-cards-flex > .card {
+                flex: 0 0 calc(50% - 15px);
+                width: calc(50% - 15px);
+                max-width: calc(50% - 15px);
+                box-sizing: border-box;
+            }
+            .contact-cards-flex > .card:nth-child(3) {
+                flex: 0 0 calc(50% - 15px);
+                width: calc(50% - 15px);
+                max-width: calc(50% - 15px);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        /* Mobile: stacked */
+        @media (max-width: 767px) {
+            .contact-cards-flex > .card {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-            
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Dashboard</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
 
-            <div class="theme-toggles">
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
-            </div>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- PAGE HERO -->
     <section class="hero" style="min-height: 400px; height: 50vh;">
-        <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=1920&auto=format&fit=crop" alt="Contact Us" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=1920&auto=format&fit=crop"
+            alt="Contact Us" class="hero-img">
         <div class="container">
             <div class="hero-content text-center" style="margin: 0 auto;">
                 <h1 class="hero-title">Get In Touch</h1>
-                <p class="hero-subtitle">Our team is ready to assist you with styling, sourcing, and order inquiries.</p>
+                <p class="hero-subtitle">Our team is ready to assist you with styling, sourcing, and order inquiries.
+                </p>
             </div>
         </div>
     </section>
@@ -56,24 +94,28 @@
     <!-- SECTION 1: CONTACT CARDS -->
     <section class="section" style="padding-bottom: 20px;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div class="contact-cards-flex">
                 <div class="card" style="padding: 40px 20px; text-align: center; border-color: var(--secondary-color);">
                     <i class="fa-regular fa-envelope mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 10px;">Email Us</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">We usually reply within 24 hours.</p>
-                    <a href="mailto:hello@curatedvintage.com" style="color: var(--primary-color); font-weight: 600;">hello@curatedvintage.com</a>
+                    <a href="mailto:hello@curatedvintage.com"
+                        style="color: var(--primary-color); font-weight: 600;">hello@curatedvintage.com</a>
                 </div>
                 <div class="card" style="padding: 40px 20px; text-align: center; border-color: var(--secondary-color);">
                     <i class="fa-solid fa-phone mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 10px;">Call Us</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">Mon-Fri from 9am to 6pm EST.</p>
-                    <a href="tel:+1234567890" style="color: var(--primary-color); font-weight: 600;">+1 (234) 567-890</a>
+                    <a href="tel:+1234567890" style="color: var(--primary-color); font-weight: 600;">+1 (234)
+                        567-890</a>
                 </div>
                 <div class="card" style="padding: 40px 20px; text-align: center; border-color: var(--secondary-color);">
                     <i class="fa-solid fa-location-dot mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 10px;">Visit Us</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Book an appointment at our showroom.</p>
-                    <address style="color: var(--primary-color); font-style: normal; font-weight: 600;">123 Fashion Ave, NY 10001</address>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Book an appointment at our showroom.
+                    </p>
+                    <address style="color: var(--primary-color); font-style: normal; font-weight: 600;">123 Fashion Ave,
+                        NY 10001</address>
                 </div>
             </div>
         </div>
@@ -82,12 +124,14 @@
     <!-- SECTION 2: FORM & MORE INFO -->
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background-color: var(--surface-color); padding: 50px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
-                
+            <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background-color: var(--surface-color); padding: 50px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+
                 <div>
                     <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Send a Message</h2>
-                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Have a question about an item's measurements or condition? Reach out via the form below.</p>
-                    
+                    <p style="color: var(--text-secondary); margin-bottom: 30px;">Have a question about an item's
+                        measurements or condition? Reach out via the form below.</p>
+
                     <form style="display: flex; flex-direction: column; gap: 20px;">
                         <input type="text" placeholder="Full Name" class="form-control" required>
                         <input type="email" placeholder="Email Address" class="form-control" required>
@@ -98,14 +142,24 @@
                             <option value="sourcing">Sourcing Request</option>
                             <option value="other">Other</option>
                         </select>
-                        <textarea placeholder="Your Message" class="form-control" style="height: 150px; padding-top: 15px; resize: none;" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+                        <textarea placeholder="Your Message" class="form-control"
+                            style="height: 150px; padding-top: 15px; resize: none;" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="align-self: center; padding: 15px 40px; min-width: 200px;">Send
+                            Message</button>
                     </form>
                 </div>
-                
+
                 <!-- Simple "Map" Area or Image Placeholder to fit design -->
-                <div>
-                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a6?q=80&w=800&auto=format&fit=crop" alt="Showroom" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius); opacity: 0.8;">
+                <div style="min-height: 400px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4282362002343!2d-73.9926529234248!3d40.75128033512304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259ae65c490ff%3A0xc3f5e55255474775!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1711964123456!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: var(--border-radius); display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -115,15 +169,19 @@
     <section class="section">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div class="card" style="padding: 40px; background-color: var(--primary-color); color: #fff; border: none;">
+                <div class="card"
+                    style="padding: 40px; background-color: var(--primary-color); color: #fff; border: none; text-align: center;">
                     <h3 style="font-size: 24px; margin-bottom: 15px;">Sell Your Vintage</h3>
-                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">We are always looking to acquire high-quality, authentic designer pieces from the 1950s through the early 2000s.</p>
-                    <a href="#" class="btn btn-secondary" style="border-color: #fff; color: #fff;">Learn How to Sell</a>
+                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">We are always looking to acquire
+                        high-quality, authentic designer pieces from the 1950s through the early 2000s.</p>
+                    <a href="#" class="btn btn-secondary" style="border-color: #fff; color: #fff; display: inline-block;">Learn How to Sell</a>
                 </div>
-                <div class="card" style="padding: 40px; background-color: var(--secondary-color); color: #000; border: none;">
+                <div class="card"
+                    style="padding: 40px; background-color: var(--secondary-color); color: #000; border: none; text-align: center;">
                     <h3 style="font-size: 24px; margin-bottom: 15px;">Stylist Pulls</h3>
-                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">Are you a wardrobe stylist working on a film, photoshoot, or editorial? We offer industry rentals and pulls.</p>
-                    <a href="#" class="btn btn-secondary" style="border-color: #000; color: #000;">Contact PR Team</a>
+                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">Are you a wardrobe stylist working on
+                        a film, photoshoot, or editorial? We offer industry rentals and pulls.</p>
+                    <a href="#" class="btn btn-secondary" style="border-color: #000; color: #000; display: inline-block;">Contact PR Team</a>
                 </div>
             </div>
         </div>
@@ -135,7 +193,8 @@
             <div class="footer-grid">
                 <div class="footer-widget">
                     <h4 class="brand-logo"><span>C</span>urated.</h4>
-                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium
+                        vintage clothing globally.</p>
                     <div class="social-icons">
                         <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" class="icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -160,15 +219,18 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="blog.html">Journal</a></li>
                         <li><a href="pricing.html">Pricing Plan</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Shop</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
-                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1 (234) 567-890</a></li>
-                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion Ave, NY 10001</a></li>
+                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope"
+                                    style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1
+                                (234) 567-890</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion
+                                Ave, NY 10001</a></li>
                     </ul>
                 </div>
             </div>
@@ -180,4 +242,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

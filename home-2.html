@@ -5,42 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curated Premium | Online Vintage Store</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link active">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="services.html" class="nav-link">Shop</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary"
-                        style="background-color: var(--secondary-color);">Dashboard</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
 
-            <div class="theme-toggles">
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
-            </div>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -78,23 +77,21 @@
                 <!-- Card 1 -->
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1540639239084-5153294666f2?q=80&w=800&auto=format&fit=crop"
+                        <img src="https://images.unsplash.com/photo-1541216970279-affbfdd55aa8?q=80&w=800&auto=format&fit=crop"
                             alt="Roaring 20s Fashion">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Roaring 20s</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1595991838459-baf166c51880?q=80&w=800&auto=format&fit=crop"
+                        <img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?q=80&w=800&auto=format&fit=crop"
                             alt="Midnight Glamour">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Midnight Glamour</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -105,7 +102,6 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">70s Bohemian</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
                 <!-- Card 4 -->
@@ -116,7 +112,6 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">80s Power Suits</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
                 <!-- Card 5 -->
@@ -127,7 +122,6 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">90s Subculture</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
                 <!-- Card 6 -->
@@ -138,7 +132,6 @@
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Millennium Core</h3>
-                        <a href="service-details.html" class="btn btn-secondary">Explore</a>
                     </div>
                 </div>
             </div>
@@ -162,7 +155,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Vintage Designer Bags</h3>
                         <p class="card-price">$450.00</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-name="Vintage Designer Bags" data-price="$450.00" data-image="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop">Shop Now</a>
                     </div>
                 </div>
                 <div class="card">
@@ -173,7 +166,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Raw Denim Jackets</h3>
                         <p class="card-price">$180.00</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-name="Raw Denim Jackets" data-price="$180.00" data-image="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=800&auto=format&fit=crop">Shop Now</a>
                     </div>
                 </div>
                 <div class="card">
@@ -184,18 +177,18 @@
                     <div class="card-body">
                         <h3 class="card-title">Vintage Band Tees</h3>
                         <p class="card-price">$90.00</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-name="Vintage Band Tees" data-price="$90.00" data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop">Shop Now</a>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1511499767390-a73359580bc4?q=80&w=800&auto=format&fit=crop"
-                            alt="Retro Sunglasses">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop"
+                            alt="Retro Sunglasses" style="object-position: 75% center;">
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Retro Sunglasses</h3>
                         <p class="card-price">$120.00</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-primary buy-now-btn" data-name="Retro Sunglasses" data-price="$120.00" data-image="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -262,7 +255,7 @@
                 </div>
                 <div class="card">
                     <div class="card-img-wrap" style="aspect-ratio: 16/9;">
-                        <img src="https://images.unsplash.com/photo-1520006403993-474ba5aa997d?q=80&w=800&auto=format&fit=crop"
+                        <img src="assets/images/leather-jacket.png"
                             alt="Leather Care" style="padding: 0; object-fit: cover;">
                     </div>
                     <div class="card-body">
@@ -325,7 +318,7 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="blog.html">Journal</a></li>
                         <li><a href="pricing.html">Pricing Plan</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Shop</a></li>
                     </ul>
                 </div>
 

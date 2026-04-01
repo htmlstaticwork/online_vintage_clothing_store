@@ -4,43 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>70s Leather Jacket | Curated Vintage</title>
+    <title>Collection Details | Curated Vintage</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-
-            <button class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="services.html" class="nav-link active">Shop</a></li>
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary"
-                        style="background-color: var(--secondary-color);">Dashboard</a>
+                </div>
+
+                <div class="theme-toggles">
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
             </ul>
 
-            <div class="theme-toggles">
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
-            </div>
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -52,28 +51,31 @@
                 <div
                     style="background-color: var(--surface-color); padding: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                     <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=1200&auto=format&fit=crop"
-                        alt="70s Leather Jacket" style="width: 100%; object-fit: contain;">
+                        alt="Vintage Item" style="width: 100%; object-fit: contain;">
                 </div>
 
                 <!-- Product Info -->
                 <div style="display: flex; flex-direction: column; justify-content: center;">
                     <span
-                        style="color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-bottom: 10px;">1970s
-                        Archive</span>
-                    <h1 style="font-size: 40px; margin-bottom: 15px;">Classic Leather Moto Jacket</h1>
-                    <p style="font-size: 24px; color: var(--text-secondary); margin-bottom: 25px;">$280.00</p>
+                        style="color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-bottom: 10px;">Vintage
+                        Archive Selection</span>
+                    <h1 style="font-size: 40px; margin-bottom: 15px;">Vintage Item Details</h1>
+                    <p style="font-size: 24px; color: var(--text-secondary); margin-bottom: 25px;">$0.00</p>
 
                     <p style="color: var(--text-primary); margin-bottom: 30px; line-height: 1.8;">
-                        Authentic 1970s heavy-duty leather motorcycle jacket. Features original hardware, asymmetrical
-                        zip closure, and a perfectly worn-in patina that only decades of wear can achieve. Expertly
-                        cleaned and conditioned.
+                        Authentic curated vintage piece. Every item in our archive is hand-selected for its quality, 
+                        uniqueness, and historical significance. Features era-appropriate design and has been expertly 
+                        inspected and authenticated.
                     </p>
 
-                    <div style="display: flex; gap: 15px; margin-bottom: 40px;">
+                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
                         <button class="btn btn-primary" style="flex-grow: 1;">Add to Cart</button>
                         <button class="btn btn-secondary" style="width: 48px; padding: 0;"><i
                                 class="fa-regular fa-heart"></i></button>
                     </div>
+
+                    <!-- ORDER NOW BUTTON -->
+                    <button id="order-now-btn" class="btn btn-primary" style="width: 100%; margin-bottom: 40px; background-color: var(--secondary-color); color: #000;">Order Now</button>
 
                     <div style="border-top: 1px solid var(--border-color); padding-top: 20px;">
                         <ul style="color: var(--text-secondary); font-size: 14px;">
@@ -97,31 +99,27 @@
                 <div>
                     <h3 style="margin-bottom: 20px; font-size: 24px;">Condition & Details</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Condition:</strong> Excellent
-                        vintage condition. Minor scuffing on the right elbow consistent with age.</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Material:</strong> 100%
-                        Genuine Cowhide Leather</p>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Lining:</strong> Quilted nylon
-                    </p>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Era:</strong> 1970s</p>
+                        vintage condition. Professionally curated and authenticated.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Material:</strong> High-quality
+                        era-specific materials</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Inspection:</strong> 5-point
+                        quality check passed</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;"><strong>Type:</strong> Authentic Vintage Piece</p>
                 </div>
                 <div>
                     <h3 style="margin-bottom: 20px; font-size: 24px;">Measurements (Flat)</h3>
                     <table style="width: 100%; border-collapse: collapse; text-align: left;">
                         <tr style="border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 12px 0; color: var(--text-primary);">Shoulders</th>
-                            <td style="padding: 12px 0; color: var(--text-secondary);">18.5"</td>
+                            <th style="padding: 12px 0; color: var(--text-primary);">Overall Grade</th>
+                            <td style="padding: 12px 0; color: var(--text-secondary);">Premium / Excellent</td>
                         </tr>
                         <tr style="border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 12px 0; color: var(--text-primary);">Chest (Pit to Pit)</th>
-                            <td style="padding: 12px 0; color: var(--text-secondary);">21"</td>
+                            <th style="padding: 12px 0; color: var(--text-primary);">Authenticity</th>
+                            <td style="padding: 12px 0; color: var(--text-secondary);">Verified Archive</td>
                         </tr>
                         <tr style="border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 12px 0; color: var(--text-primary);">Length</th>
-                            <td style="padding: 12px 0; color: var(--text-secondary);">25"</td>
-                        </tr>
-                        <tr>
-                            <th style="padding: 12px 0; color: var(--text-primary);">Sleeve</th>
-                            <td style="padding: 12px 0; color: var(--text-secondary);">24.5"</td>
+                            <th style="padding: 12px 0; color: var(--text-primary);">Rarity</th>
+                            <td style="padding: 12px 0; color: var(--text-secondary);">Select Curation</td>
                         </tr>
                     </table>
                 </div>
@@ -129,92 +127,39 @@
         </div>
     </section>
 
-    <!-- SECTION 3: CARE INSTRUCTIONS -->
+    <!-- SECTION 3: SIMILAR ITEMS -->
     <section class="section">
         <div class="container text-center">
-            <h2 class="section-title">Care Instructions</h2>
-            <p class="section-subtitle mb-50" style="max-width: 800px; margin: 0 auto;">Vintage leather requires special
-                attention to maintain its suppleness and character.</p>
+            <h2 class="section-title">Care & Preservation</h2>
+            <p class="section-subtitle mb-50" style="max-width: 800px; margin: 0 auto;">Our vintage collection deserves to last for generations to come.</p>
 
             <div class="grid-4">
                 <div>
                     <i class="fa-solid fa-droplet-slash mb-30"
                         style="font-size: 30px; color: var(--secondary-color);"></i>
                     <h4 style="margin-bottom: 10px;">Keep Dry</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">Avoid heavy rain. If wet, let it air dry
-                        naturally away from direct heat.</p>
+                    <p style="font-size: 14px; color: var(--text-secondary);">Avoid heavy moisture. Let it air dry
+                        naturally if necessary.</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-bottle-droplet mb-30"
+                    <i class="fa-solid fa-sun-plant-wilt mb-30"
                         style="font-size: 30px; color: var(--secondary-color);"></i>
-                    <h4 style="margin-bottom: 10px;">Condition Annually</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">Use a high-quality leather conditioner
-                        once a year to prevent cracking.</p>
+                    <h4 style="margin-bottom: 10px;">Avoid Direct Sun</h4>
+                    <p style="font-size: 14px; color: var(--text-secondary);">Store away from direct light to prevent
+                        fading over time.</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-shirt mb-30" style="font-size: 30px; color: var(--secondary-color);"></i>
                     <h4 style="margin-bottom: 10px;">Store Properly</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">Hang on a wide, padded hanger in a cool,
-                        well-ventilated closet.</p>
+                    <p style="font-size: 14px; color: var(--text-secondary);">Use appropriate hangers to maintain the
+                        garment's original silhouette.</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-jug-detergent mb-30"
+                    <i class="fa-solid fa-sparkles mb-30"
                         style="font-size: 30px; color: var(--secondary-color);"></i>
-                    <h4 style="margin-bottom: 10px;">Professionally Clean</h4>
-                    <p style="font-size: 14px; color: var(--text-secondary);">Only use specialized leather cleaners when
-                        deep cleaning is required.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: SIMILAR ITEMS -->
-    <section class="section" style="background-color: var(--surface-color);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Similar Archive Pieces</h2>
-            </div>
-
-            <div class="grid-4">
-                <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?q=80&w=800&auto=format&fit=crop"
-                            alt="80s Suede Bomber"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">80s Suede Bomber</h3>
-                        <p class="card-price">$195.00</p>
-                        <a href="#" class="btn btn-secondary">View Item</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=800&auto=format&fit=crop"
-                            alt="Vintage Leather Trousers"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Vintage Leather Trousers</h3>
-                        <p class="card-price">$150.00</p>
-                        <a href="#" class="btn btn-secondary">View Item</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1560343090-f0409e92791a?q=80&w=800&auto=format&fit=crop"
-                            alt="70s Harness Boots"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">70s Harness Boots</h3>
-                        <p class="card-price">$220.00</p>
-                        <a href="#" class="btn btn-secondary">View Item</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img-wrap"><img
-                            src="https://images.unsplash.com/photo-1624222247516-746a394ec271?q=80&w=800&auto=format&fit=crop"
-                            alt="Studded Leather Belt"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Studded Leather Belt</h3>
-                        <p class="card-price">$65.00</p>
-                        <a href="#" class="btn btn-secondary">View Item</a>
-                    </div>
+                    <h4 style="margin-bottom: 10px;">Expert Cleaning</h4>
+                    <p style="font-size: 14px; color: var(--text-secondary);">Follow label instructions or use specialist
+                        vintage cleaners.</p>
                 </div>
             </div>
         </div>
@@ -252,7 +197,7 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="blog.html">Journal</a></li>
                         <li><a href="pricing.html">Pricing Plan</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Shop</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
@@ -274,6 +219,46 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+            if (selectedProduct) {
+                // Update product image
+                const productImg = document.querySelector('.section img');
+                if (productImg) {
+                    productImg.src = selectedProduct.image;
+                    productImg.alt = selectedProduct.name;
+                }
+                
+                // Update product name
+                const productName = document.querySelector('.section h1');
+                if (productName) productName.innerText = selectedProduct.name;
+                
+                // Update product price
+                const productPrice = document.querySelector('.section p[style*="font-size: 24px"]');
+                if (productPrice) productPrice.innerText = selectedProduct.price;
+
+                // Configure Add to Cart Button
+                const addToCartBtn = document.querySelector('.section .btn-primary');
+                if (addToCartBtn) {
+                    addToCartBtn.classList.add('add-to-cart-btn');
+                    addToCartBtn.setAttribute('data-name', selectedProduct.name);
+                    addToCartBtn.setAttribute('data-price', selectedProduct.price);
+                    addToCartBtn.setAttribute('data-image', selectedProduct.image);
+                }
+
+                // Order Now Button Functionality
+                const orderNowBtn = document.getElementById('order-now-btn');
+                if (orderNowBtn) {
+                    orderNowBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        // Data is already in localStorage as 'selectedProduct'
+                        window.location.href = 'orders.html';
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
