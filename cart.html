@@ -92,14 +92,17 @@
         }
 
         .remove-btn {
-            color: #db4437;
             cursor: pointer;
             font-size: 14px;
             background: none;
             border: none;
             display: flex;
-            align-items: center;
-            gap: 5px;
+            padding: 10px;
+            transition: var(--transition);
+        }
+
+        .remove-btn:hover {
+            opacity: 0.7;
         }
 
         .summary-card {
@@ -107,10 +110,7 @@
             padding: 40px;
             border-radius: var(--border-radius);
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
             height: fit-content;
-            position: sticky;
-            top: 120px;
         }
 
         .summary-row {
@@ -121,17 +121,119 @@
         }
 
         .summary-total {
-            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
             padding-top: 20px;
-            font-weight: 700;
+            border-top: 2px solid var(--border-color);
             font-size: 20px;
-            font-family: var(--font-heading);
+            font-weight: 700;
         }
 
         .coupon-group {
-            margin-top: 30px;
             display: flex;
             gap: 10px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Mobile Table Style */
+        @media (max-width: 1024px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .cart-table thead {
+                display: none;
+            }
+
+            .cart-table, 
+            .cart-table tbody, 
+            .cart-table tr, 
+            .cart-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .cart-item {
+                padding: 40px 0;
+                position: relative;
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .cart-item td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px dashed var(--border-color);
+                text-align: right;
+            }
+
+            .cart-item td:last-child {
+                border-bottom: none;
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+
+            .cart-item td::before {
+                content: attr(data-label);
+                font-family: var(--font-heading);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 13px;
+                color: var(--text-primary);
+                width: 120px;
+                text-align: left;
+                flex-shrink: 0;
+            }
+
+            /* Product column alignment */
+            .cart-item td[data-label="Product"] {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+                padding-bottom: 30px;
+            }
+
+            .cart-item td[data-label="Product"]::before {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .cart-product {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cart-product img {
+                width: 140px;
+                height: 180px;
+            }
+
+            .cart-product-info h3 {
+                font-size: 20px;
+            }
+
+            .quantity-control {
+                margin-left: auto;
+            }
+
+            .remove-btn {
+                background-color: rgba(219, 68, 55, 0.1);
+                color: #db4437;
+                width: 100%;
+                justify-content: center;
+                padding: 15px;
+                border-radius: var(--border-radius);
+                font-weight: 600;
+                margin-top: 10px;
+            }
+            .remove-btn::before {
+                content: "Remove Item";
+                margin-right: 10px;
+            }
         }
 
         .benefits-grid {
@@ -218,9 +320,13 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
                 
-                <li class="mobile-nav-item"><a href="cart.html" class="nav-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a></li>
-                <li class="mobile-nav-item"><a href="#" class="nav-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a></li>
-                <li class="mobile-nav-item"><a href="#" class="nav-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a></li>
+                <li class="mobile-nav-group">
+                    <div class="mobile-nav-utilities">
+                        <a href="cart.html" class="nav-utility-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a>
+                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a>
+                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a>
+                    </div>
+                </li>
 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>

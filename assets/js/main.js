@@ -99,9 +99,11 @@ function updateCartCount() {
     // Update all cart links (desktop icon and mobile text link)
     const cartLinks = document.querySelectorAll('a[href="cart.html"]');
     cartLinks.forEach(link => {
-        // If it's the mobile nav link (has "Cart" text)
-        if (link.classList.contains('nav-link') && (link.innerText.toUpperCase().includes('CART') || link.id === 'cart-link-mobile')) {
-            link.innerHTML = `<i class="fas fa-shopping-cart" style="margin-right: 15px;"></i> CART (${count})`;
+        // Update both mobile utility link and any other cart icons
+        if (link.id === 'cart-link-mobile' || link.classList.contains('nav-link') || link.classList.contains('sidebar-link') || link.classList.contains('nav-utility-link')) {
+             if (link.innerText.toUpperCase().includes('CART') || link.id === 'cart-link-mobile') {
+                link.innerHTML = `<i class="fas fa-shopping-cart" style="margin-right: 15px;"></i> CART (${count})`;
+             }
         }
     });
 }

@@ -42,6 +42,47 @@
                 width: 100%;
             }
         }
+
+        /* Sourcing section responsive */
+        .sourcing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .sourcing-card {
+            padding: 50px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sourcing-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: var(--font-primary);
+        }
+        .sourcing-text {
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 400px;
+        }
+        .sourcing-btn {
+            white-space: nowrap;
+            min-width: 180px;
+        }
+
+        @media (max-width: 1024px) {
+            .sourcing-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-grid {
+                grid-template-columns: 1fr !important;
+                padding: 30px !important;
+                gap: 40px !important;
+            }
+        }
     </style>
 </head>
 
@@ -60,9 +101,13 @@
                 <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
 
-                <li class="mobile-nav-item"><a href="cart.html" class="nav-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a></li>
-                <li class="mobile-nav-item"><a href="#" class="nav-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a></li>
-                <li class="mobile-nav-item"><a href="#" class="nav-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a></li>
+                <li class="mobile-nav-group">
+                    <div class="mobile-nav-utilities">
+                        <a href="cart.html" class="nav-utility-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a>
+                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a>
+                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a>
+                    </div>
+                </li>
 
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
@@ -128,7 +173,7 @@
     <!-- SECTION 2: FORM & MORE INFO -->
     <section class="section">
         <div class="container">
-            <div
+            <div class="contact-form-grid"
                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background-color: var(--surface-color); padding: 50px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
 
                 <div>
@@ -172,20 +217,20 @@
     <!-- SECTION 3: SOURCING/WHOLESALE -->
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div class="card"
-                    style="padding: 40px; background-color: var(--primary-color); color: #fff; border: none; text-align: center;">
-                    <h3 style="font-size: 24px; margin-bottom: 15px;">Sell Your Vintage</h3>
-                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">We are always looking to acquire
+            <div class="sourcing-grid">
+                <div class="card sourcing-card"
+                    style="background-color: var(--primary-color); color: #fff; border: none;">
+                    <h3 class="sourcing-title">Sell Your Vintage</h3>
+                    <p class="sourcing-text">We are always looking to acquire
                         high-quality, authentic designer pieces from the 1950s through the early 2000s.</p>
-                    <a href="#" class="btn btn-secondary" style="border-color: #fff; color: #fff; display: inline-block;">Learn How to Sell</a>
+                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #fff; color: #fff;">Learn How to Sell</a>
                 </div>
-                <div class="card"
-                    style="padding: 40px; background-color: var(--secondary-color); color: #000; border: none; text-align: center;">
-                    <h3 style="font-size: 24px; margin-bottom: 15px;">Stylist Pulls</h3>
-                    <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">Are you a wardrobe stylist working on
+                <div class="card sourcing-card"
+                    style="background-color: var(--secondary-color); color: #000; border: none;">
+                    <h3 class="sourcing-title">Stylist Pulls</h3>
+                    <p class="sourcing-text">Are you a wardrobe stylist working on
                         a film, photoshoot, or editorial? We offer industry rentals and pulls.</p>
-                    <a href="#" class="btn btn-secondary" style="border-color: #000; color: #000; display: inline-block;">Contact PR Team</a>
+                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #000; color: #000;">Contact PR Team</a>
                 </div>
             </div>
         </div>

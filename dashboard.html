@@ -45,16 +45,16 @@
                     <i class="fa-solid fa-bell"></i>
                     <span>Notifications</span>
                 </a>
-                <a href="cart.html" class="sidebar-link mobile-nav-item">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span>Cart (0)</span>
+                <a href="cart.html" class="sidebar-link mobile-nav-item" id="cart-link-mobile">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>CART (0)</span>
                 </a>
                 <a href="#" class="sidebar-link mobile-nav-item" id="mobile-theme-toggle">
-                    <i class="fa-solid fa-moon"></i>
-                    <span>Dark Mode</span>
+                    <i class="fas fa-moon"></i>
+                    <span>DARK MODE</span>
                 </a>
                 <a href="#" class="sidebar-link mobile-nav-item" id="mobile-rtl-toggle">
-                    <i class="fa-solid fa-right-left"></i>
+                    <i class="fas fa-exchange-alt"></i>
                     <span>RTL</span>
                 </a>
             </nav>
@@ -524,10 +524,49 @@
                 text-align: left;
             }
 
-            .grid-template-columns { grid-template-columns: 1fr !important; }
-            main > div:last-child { grid-template-columns: 1fr; }
+            /* Stack grids one by one */
+            .grid-3-resp, 
+            .insight-grid,
+            .closet-grid,
+            .settings-grid { 
+                grid-template-columns: 1fr !important; 
+                gap: 20px !important;
+            }
+
+            /* Stack wishlist rows one by one */
+            .wishlist-row {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 15px !important;
+                padding: 30px 20px !important;
+            }
+
+            .wishlist-img {
+                margin-right: 0 !important;
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .wishlist-info, 
+            .wishlist-price, 
+            .wishlist-status {
+                margin-right: 0 !important;
+                width: 100% !important;
+            }
+
+            .wishlist-price {
+                font-size: 18px !important;
+            }
+
+            .wishlist-status {
+                width: fit-content !important;
+                margin: 0 auto !important;
+            }
+
             .sidebar-user { display: inline-flex !important; }
             .sidebar.active .sidebar-user { display: inline-flex !important; }
+            
+            /* ... removed the broken .grid-template-columns selector ... */
 
             /* ---- RTL at 768px ---- */
             [dir="rtl"] .dash-header {
