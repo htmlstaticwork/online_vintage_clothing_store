@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Curated Vintage Store</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-section {
+            padding: 80px 0;
+        }
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+        }
+        .checkout-box {
+            background-color: var(--surface-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .checkout-title {
+            font-size: 24px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .checkout-title span {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-family: var(--font-body);
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .payment-card {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .payment-card.active {
+            border-color: var(--primary-color);
+            background-color: var(--hover-overlay);
+        }
+        .payment-card i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .order-review-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .order-review-item img {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .order-review-info h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .order-review-info p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 900px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+            .payment-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="cart.html" class="nav-link">Cart</a></li>
+                <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+                
+                <div class="nav-ctas">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="dashboard.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Dashboard</a>
+                </div>
+            </ul>
+
+            <div class="theme-toggles">
+                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="mb-50">Secure Checkout</h1>
+            
+            <div class="checkout-grid">
+                <div class="checkout-main">
+                    <!-- SECTION 1: SHIPPING -->
+                    <div class="checkout-box">
+                        <h2 class="checkout-title"><span>1</span> Shipping Information</h2>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="Enter first name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Enter last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" placeholder="Street address">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" placeholder="City">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">State</label>
+                                <input type="text" class="form-control" placeholder="State">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">ZIP Code</label>
+                                <input type="text" class="form-control" placeholder="ZIP code">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: PAYMENT -->
+                    <div class="checkout-box">
+                        <h2 class="checkout-title"><span>2</span> Payment Method</h2>
+                        <div class="payment-methods">
+                            <div class="payment-card active">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>Credit Card</span>
+                            </div>
+                            <div class="payment-card">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>PayPal</span>
+                            </div>
+                            <div class="payment-card">
+                                <i class="fa-brands fa-apple-pay"></i>
+                                <span>Apple Pay</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Card Number</label>
+                            <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" placeholder="MM / YY">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">CVC</label>
+                                <input type="text" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-sidebar">
+                    <!-- SECTION 3: ORDER REVIEW -->
+                    <div class="checkout-box" style="position: sticky; top: 120px;">
+                        <h2 class="checkout-title" style="font-size: 20px;">Order Review</h2>
+                        
+                        <div class="order-review-item">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=300&auto=format&fit=crop" alt="Item">
+                            <div class="order-review-info">
+                                <h4>70s Leather Jacket</h4>
+                                <p>Qty: 1 | $150.00</p>
+                            </div>
+                        </div>
+                        <div class="order-review-item">
+                            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=300&auto=format&fit=crop" alt="Item">
+                            <div class="order-review-info">
+                                <h4>Gold Plated Watch</h4>
+                                <p>Qty: 1 | $350.00</p>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 30px;">
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span>Subtotal</span>
+                                <span>$500.00</span>
+                            </div>
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span>Shipping</span>
+                                <span style="color: #2e7d32;">FREE</span>
+                            </div>
+                            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: 700; font-family: var(--font-heading); font-size: 18px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                                <span>Total</span>
+                                <span>$500.00</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;">Complete Purchase</button>
+                        
+                        <!-- SECTION 4: TRUST & SECURITY -->
+                        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); text-align: center;">
+                            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 15px;">
+                                <i class="fa-solid fa-lock" style="margin-right: 5px;"></i> All transactions are encrypted and secure.
+                            </p>
+                            <div style="display: flex; justify-content: center; gap: 15px; opacity: 0.5;">
+                                <i class="fa-brands fa-cc-visa" style="font-size: 24px;"></i>
+                                <i class="fa-brands fa-cc-mastercard" style="font-size: 24px;"></i>
+                                <i class="fa-brands fa-cc-amex" style="font-size: 24px;"></i>
+                                <i class="fa-brands fa-cc-discover" style="font-size: 24px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="brand-logo"><span>C</span>urated.</h4>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="services.html">All Collections</a></li>
+                        <li><a href="services.html">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="mailto:hello@curatedvintage.com">hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curated Vintage Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

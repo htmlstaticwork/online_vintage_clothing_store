@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-            
+
             <button class="menu-toggle" id="mobile-menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -26,11 +28,12 @@
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                
+
                 <div class="nav-ctas">
                     <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="register.html" class="btn btn-primary">Signup</a>
-                    <a href="dashboard.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Dashboard</a>
+                    <a href="dashboard.html" class="btn btn-primary"
+                        style="background-color: var(--secondary-color);">Dashboard</a>
                 </div>
             </ul>
 
@@ -43,7 +46,8 @@
 
     <!-- PAGE HERO -->
     <section class="hero" style="min-height: 400px; height: 50vh;">
-        <img src="assets/images/hero.png" alt="Pricing" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1920&auto=format&fit=crop"
+            alt="Archive Membership" class="hero-img">
         <div class="container">
             <div class="hero-content text-center" style="margin: 0 auto;">
                 <h1 class="hero-title">Archive Memberships</h1>
@@ -59,36 +63,56 @@
                 <h2 class="section-title">Membership Plans</h2>
                 <p class="section-subtitle">Choose the level of access that suits your collecting habits.</p>
             </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+
                 <!-- Plan 1 -->
                 <div class="card" style="padding: 40px; text-align: center;">
                     <h3 style="font-size: 24px; margin-bottom: 10px;">Enthusiast</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px;">For the casual collector.</p>
-                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$0<span style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
-                    
+                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$0<span
+                            style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
+
                     <ul style="text-align: left; margin-bottom: 40px; color: var(--text-secondary);">
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Access to standard drops</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Digital wishlists</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Standard shipping rates</li>
-                        <li style="margin-bottom: 15px; opacity: 0.5;"><i class="fa-solid fa-xmark" style="margin-right: 10px;"></i> No early access</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Access to standard drops
+                        </li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Digital wishlists</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Standard shipping rates
+                        </li>
+                        <li style="margin-bottom: 15px; opacity: 0.5;"><i class="fa-solid fa-xmark"
+                                style="margin-right: 10px;"></i> No early access</li>
                     </ul>
                     <a href="register.html" class="btn btn-secondary" style="width: 100%;">Create Free Account</a>
                 </div>
 
                 <!-- Plan 2 (Highlighted) -->
-                <div class="card" style="padding: 40px; text-align: center; border: 2px solid var(--secondary-color); transform: scale(1.05); z-index: 1;">
-                    <div style="background-color: var(--secondary-color); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px; text-transform: uppercase;">Most Popular</div>
+                <div class="card"
+                    style="padding: 40px; text-align: center; border: 2px solid var(--secondary-color); transform: scale(1.05); z-index: 1;">
+                    <div
+                        style="background-color: var(--secondary-color); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px; text-transform: uppercase;">
+                        Most Popular</div>
                     <h3 style="font-size: 24px; margin-bottom: 10px;">Curator Elite</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px;">For the dedicated fashion lover.</p>
-                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$29<span style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
-                    
+                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$29<span
+                            style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
+
                     <ul style="text-align: left; margin-bottom: 40px; color: var(--text-secondary);">
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> 24hr early access to all drops</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Free domestic shipping</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> 10% discount on all purchases</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Virtual styling consultation (1/mo)</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> 24hr early access to all
+                            drops</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Free domestic shipping
+                        </li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> 10% discount on all
+                            purchases</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Virtual styling
+                            consultation (1/mo)</li>
                     </ul>
                     <a href="register.html" class="btn btn-primary" style="width: 100%;">Subscribe Now</a>
                 </div>
@@ -97,13 +121,22 @@
                 <div class="card" style="padding: 40px; text-align: center;">
                     <h3 style="font-size: 24px; margin-bottom: 10px;">Archivist</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px;">For the serious investor.</p>
-                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$99<span style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
-                    
+                    <h2 style="font-size: 48px; color: var(--primary-color); margin-bottom: 30px;">$99<span
+                            style="font-size: 16px; color: var(--text-secondary); font-weight: 400;">/month</span></h2>
+
                     <ul style="text-align: left; margin-bottom: 40px; color: var(--text-secondary);">
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> 48hr early access to all drops</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Free global shipping</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> VIP sourcing requests</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i> Personal styling sessions</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> 48hr early access to all
+                            drops</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Free global shipping
+                        </li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> VIP sourcing requests
+                        </li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-check"
+                                style="color: var(--secondary-color); margin-right: 10px;"></i> Personal styling
+                            sessions</li>
                     </ul>
                     <a href="register.html" class="btn btn-secondary" style="width: 100%;">Subscribe Now</a>
                 </div>
@@ -118,27 +151,33 @@
             <div class="section-header">
                 <h2 class="section-title">The Curated Advantage</h2>
             </div>
-            
+
             <div class="grid-4 text-center">
                 <div class="card" style="padding: 30px; border: none; background: transparent; box-shadow: none;">
-                    <i class="fa-solid fa-clock-rotate-left mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
+                    <i class="fa-solid fa-clock-rotate-left mb-30"
+                        style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 15px;">Early Access</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">The best vintage pieces sell out in minutes. Members get to shop our weekly drops before the public.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px;">The best vintage pieces sell out in
+                        minutes. Members get to shop our weekly drops before the public.</p>
                 </div>
                 <div class="card" style="padding: 30px; border: none; background: transparent; box-shadow: none;">
                     <i class="fa-solid fa-truck-fast mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 15px;">Free Shipping</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">Enjoy complimentary shipping on all your orders, so you can shop whenever inspiration strikes.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Enjoy complimentary shipping on all your
+                        orders, so you can shop whenever inspiration strikes.</p>
                 </div>
                 <div class="card" style="padding: 30px; border: none; background: transparent; box-shadow: none;">
                     <i class="fa-solid fa-user-tie mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 15px;">Personal Styling</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">Our expert curators will help you build a cohesive vintage wardrobe tailored to your taste.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Our expert curators will help you build a
+                        cohesive vintage wardrobe tailored to your taste.</p>
                 </div>
                 <div class="card" style="padding: 30px; border: none; background: transparent; box-shadow: none;">
-                    <i class="fa-solid fa-magnifying-glass-location mb-30" style="font-size: 40px; color: var(--primary-color);"></i>
+                    <i class="fa-solid fa-magnifying-glass-location mb-30"
+                        style="font-size: 40px; color: var(--primary-color);"></i>
                     <h3 style="margin-bottom: 15px;">Sourcing Requests</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">Looking for a specific 1980s Chanel bag? Our team will source it exclusively for you.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px;">Looking for a specific 1980s Chanel bag?
+                        Our team will source it exclusively for you.</p>
                 </div>
             </div>
         </div>
@@ -150,23 +189,31 @@
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
-            
+
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px;">
                     <h4 style="font-size: 18px; margin-bottom: 10px;">Can I cancel my membership at any time?</h4>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Yes, our memberships are billed monthly and you can cancel or pause your subscription at any time straight from your dashboard settings.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Yes, our memberships are
+                        billed monthly and you can cancel or pause your subscription at any time straight from your
+                        dashboard settings.</p>
                 </div>
                 <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px;">
                     <h4 style="font-size: 18px; margin-bottom: 10px;">How does early access work?</h4>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">You will receive an exclusive password via email or SMS 24 to 48 hours before our weekly drop goes live to the general public.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">You will receive an
+                        exclusive password via email or SMS 24 to 48 hours before our weekly drop goes live to the
+                        general public.</p>
                 </div>
                 <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px;">
                     <h4 style="font-size: 18px; margin-bottom: 10px;">What is a sourcing request?</h4>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Archivist members can submit descriptions or photos of specific vintage "grail" items they are looking for. Our team will put out feelers to our global network of sourcers to find it for you.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Archivist members can
+                        submit descriptions or photos of specific vintage "grail" items they are looking for. Our team
+                        will put out feelers to our global network of sourcers to find it for you.</p>
                 </div>
                 <div style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 20px;">
                     <h4 style="font-size: 18px; margin-bottom: 10px;">How do the styling sessions operate?</h4>
-                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">It is a 30-minute video call with one of our lead stylists where we review your current wardrobe and suggest vintage additions that fit your aesthetic and sizing perfectly.</p>
+                    <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">It is a 30-minute video
+                        call with one of our lead stylists where we review your current wardrobe and suggest vintage
+                        additions that fit your aesthetic and sizing perfectly.</p>
                 </div>
             </div>
         </div>
@@ -177,8 +224,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-widget">
-                    <h4 style="font-family: var(--font-heading); font-size: 24px;"><span>C</span>urated.</h4>
-                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                    <h4 class="brand-logo"><span>C</span>urated.</h4>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium
+                        vintage clothing globally.</p>
                     <div class="social-icons">
                         <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" class="icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -209,9 +257,12 @@
                 <div class="footer-widget">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
-                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1 (234) 567-890</a></li>
-                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion Ave, NY 10001</a></li>
+                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope"
+                                    style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1
+                                (234) 567-890</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion
+                                Ave, NY 10001</a></li>
                     </ul>
                 </div>
             </div>
@@ -223,4 +274,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

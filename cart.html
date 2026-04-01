@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Bag | Curated Vintage Store</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cart-section {
+            padding: 80px 0;
+        }
+        .cart-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-table th {
+            text-align: left;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        .cart-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .cart-item td {
+            padding: 30px 0;
+            vertical-align: middle;
+        }
+        .cart-product {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .cart-product img {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+        .cart-product-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .cart-product-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            width: fit-content;
+            border-radius: var(--border-radius);
+        }
+        .quantity-btn {
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            background: none;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .remove-btn {
+            color: #db4437;
+            cursor: pointer;
+            font-size: 14px;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .summary-card {
+            background-color: var(--surface-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .summary-total {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            font-weight: 700;
+            font-size: 20px;
+            font-family: var(--font-heading);
+        }
+        .coupon-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+        }
+        .benefit-card i {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .benefit-card h4 {
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 900px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-table thead {
+                display: none;
+            }
+            .cart-item td {
+                display: block;
+                padding: 15px 0;
+                text-align: right;
+            }
+            .cart-item td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+            .cart-product {
+                justify-content: flex-end;
+            }
+            .quantity-control {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="cart.html" class="nav-link active">Cart</a></li>
+                
+                <div class="nav-ctas">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                </div>
+            </ul>
+
+            <div class="theme-toggles">
+                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: SHOPPING BAG -->
+    <section class="cart-section">
+        <div class="container">
+            <h1 class="mb-50">Your Shopping Bag</h1>
+            
+            <div class="cart-grid">
+                <div class="cart-list">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Item 1 -->
+                            <tr class="cart-item">
+                                <td data-label="Product">
+                                    <div class="cart-product">
+                                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=300&auto=format&fit=crop" alt="70s Leather Jacket">
+                                        <div class="cart-product-info">
+                                            <h3>70s Leather Jacket</h3>
+                                            <p>Size: Medium | Color: Whiskey</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Price">$150.00</td>
+                                <td data-label="Quantity">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" value="1" class="quantity-input" readonly>
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                                <td data-label="Subtotal">$150.00</td>
+                                <td>
+                                    <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Item 2 -->
+                            <tr class="cart-item">
+                                <td data-label="Product">
+                                    <div class="cart-product">
+                                        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=300&auto=format&fit=crop" alt="Gold Plated Watch">
+                                        <div class="cart-product-info">
+                                            <h3>Gold Plated Watch</h3>
+                                            <p>Authentic 1985 Model</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Price">$350.00</td>
+                                <td data-label="Quantity">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn">-</button>
+                                        <input type="text" value="1" class="quantity-input" readonly>
+                                        <button class="quantity-btn">+</button>
+                                    </div>
+                                </td>
+                                <td data-label="Subtotal">$350.00</td>
+                                <td>
+                                    <button class="remove-btn"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="mt-50">
+                        <a href="services.html" class="btn btn-secondary">Continue Shopping</a>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: ORDER SUMMARY -->
+                <div class="summary-card">
+                    <h2 class="mb-30" style="font-size: 24px;">Order Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$500.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span style="color: #2e7d32;">FREE</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span>$40.00</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span>$540.00</span>
+                    </div>
+                    
+                    <div class="coupon-group">
+                        <input type="text" placeholder="Promo Code" class="form-control" style="height: 48px;">
+                        <button class="btn btn-secondary" style="height: 48px; border-color: var(--border-color);">Apply</button>
+                    </div>
+                    
+                    <a href="checkout.html" class="btn btn-primary mt-50" style="width: 100%;">Proceed to Checkout</a>
+                    <p class="text-center mt-50" style="font-size: 12px; color: var(--text-secondary);">Secure payment options available at next step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: VALUE PROPOSITIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h4>Sustainably Sourced</h4>
+                    <p>Every piece is handpicked to reduce fashion waste and preserve history.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <h4>Authenticity Guaranteed</h4>
+                    <p>We rigorously authenticate every designer label in our archive.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h4>Premium Shipping</h4>
+                    <p>Tracked and insured global delivery in eco-friendly packaging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: RECOMMENDED -->
+    <section class="section" style="background-color: var(--surface-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Complete Your Look</h2>
+                <p class="section-subtitle">Specially curated pieces that pair beautifully with your bag.</p>
+            </div>
+            
+            <div class="grid-4">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1601924582970-87846497042a?q=80&w=800&auto=format&fit=crop" alt="Vintage Silk Scarf">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Vintage Silk Scarves</h3>
+                        <p class="card-price">$45.00</p>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=800&auto=format&fit=crop" alt="Floral Midi Dress">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Floral Midi Dress</h3>
+                        <p class="card-price">$95.00</p>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800&auto=format&fit=crop" alt="Classic 90s Denim">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Classic 90s Denim</h3>
+                        <p class="card-price">$85.00</p>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7697c?q=80&w=800&auto=format&fit=crop" alt="Corduroy Trousers">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Corduroy Trousers</h3>
+                        <p class="card-price">$65.00</p>
+                        <a href="#" class="btn btn-secondary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="brand-logo"><span>C</span>urated.</h4>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                    <div class="social-icons">
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="icon-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="services.html">All Collections</a></li>
+                        <li><a href="services.html">New Arrivals</a></li>
+                        <li><a href="services.html">Womenswear</a></li>
+                        <li><a href="services.html">Menswear</a></li>
+                        <li><a href="services.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Journal</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="orders.html">Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="mailto:hello@curatedvintage.com"><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>hello@curatedvintage.com</a></li>
+                        <li><a href="tel:+1234567890"><i class="fa-solid fa-phone" style="margin-right: 10px;"></i>+1 (234) 567-890</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i>123 Fashion Ave, NY 10001</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curated Vintage Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

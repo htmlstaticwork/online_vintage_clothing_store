@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | Curated Vintage Store</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .wishlist-header {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .wishlist-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .wishlist-card {
+            position: relative;
+        }
+        .remove-wishlist {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--surface-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #db4437;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            z-index: 5;
+            transition: var(--transition);
+        }
+        .remove-wishlist:hover {
+            background-color: #db4437;
+            color: #fff;
+        }
+        .share-section {
+            background-color: var(--surface-color);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .perk-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .perk-icon {
+            font-size: 24px;
+            color: var(--secondary-color);
+            background-color: var(--hover-overlay);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .perks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Collections</a></li>
+                <li><a href="wishlist.html" class="nav-link active">Wishlist</a></li>
+                <li><a href="cart.html" class="nav-link">Cart</a></li>
+                
+                <div class="nav-ctas">
+                    <a href="login.html" class="btn btn-secondary">Login</a>
+                    <a href="register.html" class="btn btn-primary">Join Now</a>
+                </div>
+            </ul>
+
+            <div class="theme-toggles">
+                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="wishlist-header">
+        <div class="container">
+            <h1>My Saved Treasures</h1>
+            <p class="section-subtitle">Keep track of the pieces you love from our archive.</p>
+            <div class="wishlist-actions">
+                <button class="btn btn-secondary"><i class="fa-solid fa-cart-plus" style="margin-right: 8px;"></i> Add All to Bag</button>
+                <button class="btn btn-primary"><i class="fa-solid fa-share-nodes" style="margin-right: 8px;"></i> Share List</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: WISHLIST GRID -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="grid-4">
+                <!-- Item 1 -->
+                <div class="card wishlist-card">
+                    <button class="remove-wishlist" title="Remove from Wishlist"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800&auto=format&fit=crop" alt="Trench Coat">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Oversized Trench Coat</h3>
+                        <p class="card-price">$120.00</p>
+                        <a href="#" class="btn btn-primary">Move to Cart</a>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="card wishlist-card">
+                    <button class="remove-wishlist" title="Remove from Wishlist"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=800&auto=format&fit=crop" alt="Gown">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">60s Evening Gown</h3>
+                        <p class="card-price">$220.00</p>
+                        <a href="#" class="btn btn-primary">Move to Cart</a>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="card wishlist-card">
+                    <button class="remove-wishlist" title="Remove from Wishlist"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800&auto=format&fit=crop" alt="Denim">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Classic 90s Denim</h3>
+                        <p class="card-price">$85.00</p>
+                        <a href="#" class="btn btn-primary">Move to Cart</a>
+                    </div>
+                </div>
+                <!-- Card 4 (Empty placeholder feel) -->
+                 <div class="card" style="border-style: dashed; display: flex; align-items: center; justify-content: center; padding: 40px; text-align: center; color: var(--text-secondary);">
+                    <div>
+                        <span style="font-size: 12px; color: var(--secondary-color);">Curated Elite</span>
+                        <p>Find more unique pieces to add to your collection.</p>
+                        <a href="services.html" class="btn btn-secondary mt-50">Browse Store</a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SHARE -->
+    <section class="share-section">
+        <div class="container">
+            <h2 class="section-title">Share Your Style</h2>
+            <p class="section-subtitle">Send your curated wishlist to friends or drop a hint for a special occasion.</p>
+            <div class="share-buttons">
+                <a href="#" class="icon-btn" style="width: 50px; height: 50px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="icon-btn" style="width: 50px; height: 50px;"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="icon-btn" style="width: 50px; height: 50px;"><i class="fa-brands fa-facebook-messenger"></i></a>
+                <a href="#" class="icon-btn" style="width: 50px; height: 50px;"><i class="fa-solid fa-link"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PERKS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Wishlist Perks</h2>
+                <p class="section-subtitle">Why smart vintage collectors use our wishlist system.</p>
+            </div>
+            
+            <div class="sidebar-logo">
+                <a href="index.html">
+                    <span>C</span>urated.
+                </a>
+            </div>
+
+            <div class="perks-grid">
+                <div class="perk-item">
+                    <div class="perk-icon"><i class="fa-solid fa-bell"></i></div>
+                    <div>
+                        <h3>Price Drop Alerts</h3>
+                        <p>Be the first to know if an item in your wishlist goes on sale or is part of a markdown event.</p>
+                    </div>
+                </div>
+                <div class="perk-item">
+                    <div class="perk-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div>
+                        <h3>Reserved Availability</h3>
+                        <p>Get notified if a wishlisted item is low on stock so you don't miss out on a one-of-a-kind piece.</p>
+                    </div>
+                </div>
+                <div class="perk-item">
+                    <div class="perk-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <div>
+                        <h3>Personalized Drops</h3>
+                        <p>We'll notify you when new items similar to your wishlist are added to the archive.</p>
+                    </div>
+                </div>
+                <div class="perk-item">
+                    <div class="perk-icon"><i class="fa-solid fa-gift"></i></div>
+                    <div>
+                        <h3>Gift Registry</h3>
+                        <p>Convert your wishlist into a formal registry for birthdays, weddings, or milestones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: RECENTLY VIEWED -->
+    <section class="section" style="background-color: var(--surface-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recently Viewed</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=800&auto=format&fit=crop" alt="Dress"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Floral Midi Dress</h3>
+                        <p class="card-price">$95.00</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=800&auto=format&fit=crop" alt="Watch"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Gold Plated Watch</h3>
+                        <p class="card-price">$350.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4 class="brand-logo"><span>C</span>urated.</h4>
+                    <p>Reviving fashion history for the modern world. We source, authenticate, and deliver premium vintage clothing globally.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="services.html">Womenswear</a></li>
+                        <li><a href="services.html">Menswear</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="orders.html">Order History</a></li>
+                        <li><a href="wishlist.html">My Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curated Vintage Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

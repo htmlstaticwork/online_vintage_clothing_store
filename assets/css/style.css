@@ -308,6 +308,20 @@ FOOTER
   letter-spacing: 1px;
 }
 
+.footer-widget .brand-logo {
+  font-size: 24px;
+  text-transform: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-widget .brand-logo span {
+  color: var(--secondary-color);
+}
+
 .footer-widget p, .footer-widget li a {
   color: var(--text-secondary);
   font-size: 14px;
