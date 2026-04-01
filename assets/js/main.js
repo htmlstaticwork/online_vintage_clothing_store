@@ -11,19 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle logic for Dark Mode and RTL
     const themeBtn = document.getElementById('theme-toggle');
+    const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
     const rtlBtn = document.getElementById('rtl-toggle');
+    const mobileRtlBtn = document.getElementById('mobile-rtl-toggle');
 
     // Initialize from LocalStorage
     initTheme();
     initRtl();
+    updateCartCount();
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', toggleTheme);
-    }
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', toggleTheme);
     
-    if (rtlBtn) {
-        rtlBtn.addEventListener('click', toggleRtl);
-    }
+    if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+    if (mobileRtlBtn) mobileRtlBtn.addEventListener('click', toggleRtl);
 
     // FAQ Accordion Toggle
     const faqHeaders = document.querySelectorAll('.faq-header');
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartItems.push(product);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             
+            updateCartCount();
             window.location.href = 'cart.html';
         });
     });
@@ -90,6 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function updateCartCount() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const count = cartItems.length;
+    
+    // Update all cart links (desktop icon and mobile text link)
+    const cartLinks = document.querySelectorAll('a[href="cart.html"]');
+    cartLinks.forEach(link => {
+        // If it's the mobile nav link (has "Cart" text)
+        if (link.classList.contains('nav-link') && (link.innerText.toUpperCase().includes('CART') || link.id === 'cart-link-mobile')) {
+            link.innerHTML = `<i class="fas fa-shopping-cart" style="margin-right: 15px;"></i> CART (${count})`;
+        }
+    });
+}
+
 function initTheme() {
     const isDark = localStorage.getItem('darkMode') === 'true';
     if (isDark) {
@@ -100,16 +116,19 @@ function initTheme() {
 
 function updateThemeIcon(isDark) {
     const themeBtn = document.getElementById('theme-toggle');
+    const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+
     if (themeBtn) {
-        if (isDark) {
-            themeBtn.innerHTML = '☀️'; // Sun icon for switching back to light
-        } else {
-            themeBtn.innerHTML = '🌙'; // Moon for dark mode
-        }
+        themeBtn.innerHTML = isDark ? '☀️' : '🌙';
+    }
+    
+    if (mobileThemeBtn) {
+        mobileThemeBtn.innerHTML = isDark ? '<i class="fas fa-sun" style="margin-right: 15px;"></i> LIGHT MODE' : '<i class="fas fa-moon" style="margin-right: 15px;"></i> DARK MODE';
     }
 }
 
-function toggleTheme() {
+function toggleTheme(e) {
+    if (e) e.preventDefault();
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDark);
@@ -123,7 +142,8 @@ function initRtl() {
     }
 }
 
-function toggleRtl() {
+function toggleRtl(e) {
+    if (e) e.preventDefault();
     const currentDir = document.documentElement.getAttribute('dir');
     const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
     document.documentElement.setAttribute('dir', newDir);

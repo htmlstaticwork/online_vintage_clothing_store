@@ -45,13 +45,21 @@
                     <i class="fa-solid fa-bell"></i>
                     <span>Notifications</span>
                 </a>
-                <a href="#" class="sidebar-link" data-section="settings">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
+                <a href="cart.html" class="sidebar-link mobile-nav-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart (0)</span>
+                </a>
+                <a href="#" class="sidebar-link mobile-nav-item" id="mobile-theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Dark Mode</span>
+                </a>
+                <a href="#" class="sidebar-link mobile-nav-item" id="mobile-rtl-toggle">
+                    <i class="fa-solid fa-right-left"></i>
+                    <span>RTL</span>
                 </a>
             </nav>
 
-            <div style="padding: 20px 30px; display: flex; gap: 10px;">
+            <div class="sidebar-theme-toggles-desktop" style="padding: 20px 30px; display: flex; gap: 10px;">
                 <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
                 <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode" style="background-color: transparent; border: 1px solid var(--border-color);">🌙</button>
                 <button class="icon-btn" id="rtl-toggle" title="Toggle RTL" style="background-color: transparent; border: 1px solid var(--border-color);">⇄</button>
@@ -401,26 +409,174 @@
 
     <!-- Media query specific for dashboard responsiveness added in CSS -->
     <style>
+        /* ===== DASHBOARD TABLET (≤1024px) ===== */
+        @media (max-width: 1024px) {
+
+            /* Show hamburger on the LEFT (content-start in LTR) */
+            .menu-toggle {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                order: 0;
+            }
+
+            /* Header row: hamburger | title */
+            .dash-header {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .dash-mobile-header-text {
+                flex-grow: 1;
+                text-align: left;
+            }
+
+            /* ---- LTR Sidebar: slide in from LEFT ---- */
+            .sidebar {
+                transform: translateX(-100%);
+                transition: var(--transition);
+                width: var(--sidebar-width) !important;
+                left: 0;
+                right: auto;
+                z-index: 200;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            /* Restore labels when open */
+            .sidebar.active .sidebar-link span,
+            .sidebar.active .sidebar-logo span,
+            .sidebar.active .sidebar-logout span {
+                display: inline !important;
+            }
+
+            .sidebar.active .sidebar-link {
+                justify-content: flex-start !important;
+                padding: 15px 30px !important;
+            }
+
+            /* Main content fills full width */
+            .main-content {
+                margin-left: 0 !important;
+            }
+
+            /* ---- RTL Sidebar: slide in from RIGHT ---- */
+            [dir="rtl"] .sidebar {
+                transform: translateX(100%) !important;
+                left: auto !important;
+                right: 0 !important;
+            }
+
+            [dir="rtl"] .sidebar.active {
+                transform: translateX(0) !important;
+            }
+
+            /* RTL: restore right-side padding in open sidebar links */
+            [dir="rtl"] .sidebar.active .sidebar-link {
+                justify-content: flex-end !important;
+                padding: 15px 30px !important;
+                text-align: right;
+            }
+
+            /* RTL: active border on RIGHT */
+            [dir="rtl"] .sidebar.active .sidebar-link.active,
+            [dir="rtl"] .sidebar.active .sidebar-link:hover {
+                border-left: none !important;
+                border-right: 3px solid var(--primary-color) !important;
+            }
+
+            /* RTL: zero out main-content right margin */
+            [dir="rtl"] .main-content {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* RTL: hamburger stays at content-start (right in RTL) */
+            [dir="rtl"] .dash-header {
+                flex-direction: row-reverse !important;
+            }
+
+            [dir="rtl"] .dash-mobile-header-text {
+                text-align: right;
+            }
+        }
+
+        /* ===== DASHBOARD MOBILE (≤768px) ===== */
         @media (max-width: 768px) {
+
             .dash-header {
                 display: flex !important;
                 align-items: center !important;
                 gap: 15px;
                 margin-bottom: 25px;
             }
+
+            .menu-toggle { display: flex !important; }
+
             .dash-mobile-header-text {
                 flex-grow: 1;
-                text-align: center;
-                margin-right: 40px; /* Offset for the 40px sidebar toggle to achieve true center */
+                text-align: left;
             }
-            .menu-toggle { display: block !important; }
+
             .grid-template-columns { grid-template-columns: 1fr !important; }
             main > div:last-child { grid-template-columns: 1fr; }
             .sidebar-user { display: inline-flex !important; }
             .sidebar.active .sidebar-user { display: inline-flex !important; }
+
+            /* ---- RTL at 768px ---- */
+            [dir="rtl"] .dash-header {
+                flex-direction: row-reverse !important;
+            }
+
+            [dir="rtl"] .dash-mobile-header-text {
+                text-align: right;
+            }
+
+            /* RTL sidebar from right */
+            [dir="rtl"] .sidebar {
+                transform: translateX(100%) !important;
+                left: auto !important;
+                right: 0 !important;
+                border-right: none !important;
+                border-left: 1px solid var(--border-color) !important;
+            }
+
+            [dir="rtl"] .sidebar.active {
+                transform: translateX(0) !important;
+            }
+
+            /* RTL sidebar link direction */
+            [dir="rtl"] .sidebar-link {
+                justify-content: flex-end;
+                text-align: right;
+            }
+
+            [dir="rtl"] .sidebar-link.active,
+            [dir="rtl"] .sidebar-link:hover {
+                border-left: none !important;
+                border-right: 3px solid var(--primary-color) !important;
+            }
+
+            /* RTL logout link */
+            [dir="rtl"] .sidebar-logout {
+                justify-content: flex-end;
+                text-align: right;
+            }
+
+            /* RTL main content */
+            [dir="rtl"] .main-content {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
         }
 
-        /* Robust centering for closet cards in tablet view using Flexbox */
+        /* Closet centering on tablet */
         @media (min-width: 768px) and (max-width: 1024px) {
             #closet .closet-grid {
                 display: flex !important;
