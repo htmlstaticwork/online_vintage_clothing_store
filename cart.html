@@ -141,13 +141,20 @@
                 gap: 50px;
             }
 
+            .cart-list-footer {
+                text-align: center;
+            }
+        }
+
+        /* Responsive Mobile Table Style - Starts below tablet size */
+        @media (max-width: 767px) {
             .cart-table thead {
                 display: none;
             }
 
-            .cart-table, 
-            .cart-table tbody, 
-            .cart-table tr, 
+            .cart-table,
+            .cart-table tbody,
+            .cart-table tr,
             .cart-table td {
                 display: block;
                 width: 100%;
@@ -163,15 +170,19 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 15px 0;
+                padding: 15px 20px;
                 border-bottom: 1px dashed var(--border-color);
                 text-align: right;
             }
 
             .cart-item td:last-child {
                 border-bottom: none;
-                justify-content: flex-start;
+                justify-content: center;
                 padding-top: 20px;
+            }
+
+            .cart-item td:last-child::before {
+                display: none;
             }
 
             .cart-item td::before {
@@ -223,16 +234,24 @@
             .remove-btn {
                 background-color: rgba(219, 68, 55, 0.1);
                 color: #db4437;
-                width: 100%;
+                width: fit-content;
                 justify-content: center;
-                padding: 15px;
+                padding: 12px 25px;
                 border-radius: var(--border-radius);
                 font-weight: 600;
-                margin-top: 10px;
+                margin: 10px auto 0;
+                display: flex;
             }
+
             .remove-btn::before {
                 content: "Remove Item";
                 margin-right: 10px;
+            }
+
+
+
+            .benefits-grid {
+                grid-template-columns: 1fr !important;
             }
         }
 
@@ -249,7 +268,8 @@
             .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .benefits-grid > *:nth-child(3) {
+
+            .benefits-grid>*:nth-child(3) {
                 grid-column: 1 / span 2;
                 justify-self: center;
                 width: calc(50% - 15px);
@@ -270,38 +290,6 @@
             font-size: 14px;
             color: var(--text-secondary);
         }
-
-        @media (max-width: 900px) {
-            .cart-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cart-table thead {
-                display: none;
-            }
-
-            .cart-item td {
-                display: block;
-                padding: 15px 0;
-                text-align: right;
-            }
-
-            .cart-item td::before {
-                content: attr(data-label);
-                float: left;
-                font-weight: 700;
-                text-transform: uppercase;
-                font-size: 12px;
-            }
-
-            .cart-product {
-                justify-content: flex-end;
-            }
-
-            .quantity-control {
-                margin-left: auto;
-            }
-        }
     </style>
 </head>
 
@@ -310,7 +298,7 @@
     <nav class="navbar navbar-left-aligned">
         <div class="container">
             <a href="index.html" class="nav-brand"><span>C</span>urated.</a>
-            
+
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="home-2.html" class="nav-link">Home 2</a></li>
@@ -319,12 +307,15 @@
                 <li><a href="pricing.html" class="nav-link">Pricing</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                
+
                 <li class="mobile-nav-group">
                     <div class="mobile-nav-utilities">
-                        <a href="cart.html" class="nav-utility-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a>
-                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a>
-                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a>
+                        <a href="cart.html" class="nav-link" id="cart-link-mobile"><i
+                                class="fas fa-shopping-cart"></i> CART (0)</a>
+                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK
+                            MODE</a>
+                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i>
+                            RTL</a>
                     </div>
                 </li>
 
@@ -334,7 +325,8 @@
                 </div>
 
                 <div class="theme-toggles">
-                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i
+                            class="fas fa-shopping-cart"></i></a>
                     <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
                     <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
@@ -368,7 +360,7 @@
                         </tbody>
                     </table>
 
-                    <div class="mt-50">
+                    <div class="mt-50 cart-list-footer">
                         <a href="services.html" class="btn btn-secondary">Continue Shopping</a>
                     </div>
                 </div>
@@ -417,7 +409,7 @@
                     <p>Every piece is handpicked to reduce fashion waste and preserve history.</p>
                 </div>
                 <div class="benefit-card">
-                    <i class="fa-solid fa-shield-check"></i>
+                    <i class="fa-solid fa-certificate"></i>
                     <h4>Authenticity Guaranteed</h4>
                     <p>We rigorously authenticate every designer label in our archive.</p>
                 </div>
@@ -447,7 +439,8 @@
                     <div class="card-body">
                         <h3 class="card-title">Vintage Silk Scarves</h3>
                         <p class="card-price">$45.00</p>
-                        <a href="#" class="btn btn-secondary add-to-cart-btn" data-name="Vintage Silk Scarves" data-price="$45.00" data-image="assets/images/vintage-silk-scarves.png">Add to Cart</a>
+                        <a href="#" class="btn btn-secondary add-to-cart-btn" data-name="Vintage Silk Scarves"
+                            data-price="$45.00" data-image="assets/images/vintage-silk-scarves.png">Add to Cart</a>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -482,7 +475,8 @@
                     <div class="card-body">
                         <h3 class="card-title">Corduroy Trousers</h3>
                         <p class="card-price">$65.00</p>
-                        <a href="#" class="btn btn-secondary add-to-cart-btn" data-name="Corduroy Trousers" data-price="$65.00" data-image="assets/images/corduroy-trousers.png">Add to Cart</a>
+                        <a href="#" class="btn btn-secondary add-to-cart-btn" data-name="Corduroy Trousers"
+                            data-price="$65.00" data-image="assets/images/corduroy-trousers.png">Add to Cart</a>
                     </div>
                 </div>
             </div>

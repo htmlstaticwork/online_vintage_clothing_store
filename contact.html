@@ -15,19 +15,22 @@
             flex-wrap: wrap;
             gap: 30px;
         }
-        .contact-cards-flex > .card {
+
+        .contact-cards-flex>.card {
             flex: 1 1 0;
             min-width: 0;
         }
+
         /* Tablet: 2 equal cards on row 1, 3rd card centered on row 2 */
         @media (min-width: 768px) and (max-width: 1024px) {
-            .contact-cards-flex > .card {
+            .contact-cards-flex>.card {
                 flex: 0 0 calc(50% - 15px);
                 width: calc(50% - 15px);
                 max-width: calc(50% - 15px);
                 box-sizing: border-box;
             }
-            .contact-cards-flex > .card:nth-child(3) {
+
+            .contact-cards-flex>.card:nth-child(3) {
                 flex: 0 0 calc(50% - 15px);
                 width: calc(50% - 15px);
                 max-width: calc(50% - 15px);
@@ -35,9 +38,10 @@
                 margin-right: auto;
             }
         }
+
         /* Mobile: stacked */
         @media (max-width: 767px) {
-            .contact-cards-flex > .card {
+            .contact-cards-flex>.card {
                 flex: 0 0 100%;
                 width: 100%;
             }
@@ -49,6 +53,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
+
         .sourcing-card {
             padding: 50px 30px;
             text-align: center;
@@ -56,11 +61,13 @@
             flex-direction: column;
             align-items: center;
         }
+
         .sourcing-title {
             font-size: 28px;
             margin-bottom: 20px;
             font-family: var(--font-primary);
         }
+
         .sourcing-text {
             margin-bottom: 30px;
             font-size: 15px;
@@ -68,6 +75,7 @@
             opacity: 0.9;
             max-width: 400px;
         }
+
         .sourcing-btn {
             white-space: nowrap;
             min-width: 180px;
@@ -77,6 +85,7 @@
             .sourcing-grid {
                 grid-template-columns: 1fr;
             }
+
             .contact-form-grid {
                 grid-template-columns: 1fr !important;
                 padding: 30px !important;
@@ -103,9 +112,12 @@
 
                 <li class="mobile-nav-group">
                     <div class="mobile-nav-utilities">
-                        <a href="cart.html" class="nav-utility-link" id="cart-link-mobile"><i class="fas fa-shopping-cart"></i> CART (0)</a>
-                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK MODE</a>
-                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i> RTL</a>
+                        <a href="cart.html" class="nav-link" id="cart-link-mobile"><i
+                                class="fas fa-shopping-cart"></i> CART (0)</a>
+                        <a href="#" class="nav-utility-link" id="mobile-theme-toggle"><i class="fas fa-moon"></i> DARK
+                            MODE</a>
+                        <a href="#" class="nav-utility-link" id="mobile-rtl-toggle"><i class="fas fa-exchange-alt"></i>
+                            RTL</a>
                     </div>
                 </li>
 
@@ -115,7 +127,8 @@
                 </div>
 
                 <div class="theme-toggles">
-                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i
+                            class="fas fa-shopping-cart"></i></a>
                     <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
                     <button class="icon-btn" id="rtl-toggle" title="Toggle RTL">⇄</button>
                 </div>
@@ -193,21 +206,19 @@
                         </select>
                         <textarea placeholder="Your Message" class="form-control"
                             style="height: 150px; padding-top: 15px; resize: none;" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="align-self: center; padding: 15px 40px; min-width: 200px;">Send
+                        <button type="submit" class="btn btn-primary"
+                            style="align-self: center; padding: 15px 40px; min-width: 200px;">Send
                             Message</button>
                     </form>
                 </div>
 
                 <!-- Simple "Map" Area or Image Placeholder to fit design -->
                 <div style="min-height: 400px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4282362002343!2d-73.9926529234248!3d40.75128033512304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259ae65c490ff%3A0xc3f5e55255474775!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1711964123456!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; border-radius: var(--border-radius); display: block;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4282362002343!2d-73.9926529234248!3d40.75128033512304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259ae65c490ff%3A0xc3f5e55255474775!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1711964123456!5m2!1sen!2sus"
+                        width="100%" height="100%"
+                        style="border:0; border-radius: var(--border-radius); display: block;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
@@ -220,17 +231,19 @@
             <div class="sourcing-grid">
                 <div class="card sourcing-card"
                     style="background-color: var(--primary-color); color: #fff; border: none;">
-                    <h3 class="sourcing-title">Sell Your Vintage</h3>
+                    <h3 class="sourcing-title" style="color: #fff;">Sell Your Vintage</h3>
                     <p class="sourcing-text">We are always looking to acquire
                         high-quality, authentic designer pieces from the 1950s through the early 2000s.</p>
-                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #fff; color: #fff;">Learn How to Sell</a>
+                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #fff; color: #fff;">Learn
+                        How to Sell</a>
                 </div>
                 <div class="card sourcing-card"
                     style="background-color: var(--secondary-color); color: #000; border: none;">
                     <h3 class="sourcing-title">Stylist Pulls</h3>
                     <p class="sourcing-text">Are you a wardrobe stylist working on
                         a film, photoshoot, or editorial? We offer industry rentals and pulls.</p>
-                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #000; color: #000;">Contact PR Team</a>
+                    <a href="#" class="btn btn-secondary sourcing-btn" style="border-color: #000; color: #000;">Contact
+                        PR Team</a>
                 </div>
             </div>
         </div>
