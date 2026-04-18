@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <div class="dashboard-wrapper">
-        
+
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="sidebar-logo">
@@ -19,9 +21,10 @@
                     <span>C</span>urated.
                 </a>
             </div>
-            
+
             <div style="padding: 0 30px; margin-bottom: 30px; display: flex; align-items: center; gap: 15px;">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+                    alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
                 <div class="sidebar-user" style="display: flex; flex-direction: column;">
                     <span style="font-weight: 600; font-size: 14px; color: var(--text-primary);">Jane Doe</span>
                     <span style="font-size: 12px; color: var(--secondary-color);">Curated Elite</span>
@@ -45,101 +48,109 @@
                     <i class="fa-solid fa-bell"></i>
                     <span>Notifications</span>
                 </a>
-                <a href="cart.html" class="sidebar-link mobile-nav-item" id="cart-link-mobile">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>CART (0)</span>
-                </a>
-                <a href="#" class="sidebar-link mobile-nav-item" id="mobile-theme-toggle">
-                    <i class="fas fa-moon"></i>
-                    <span>DARK MODE</span>
-                </a>
-                <a href="#" class="sidebar-link mobile-nav-item" id="mobile-rtl-toggle">
-                    <i class="fas fa-exchange-alt"></i>
-                    <span>RTL</span>
-                </a>
             </nav>
 
-            <div class="sidebar-theme-toggles-desktop" style="padding: 20px 30px; display: flex; gap: 10px;">
-                <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart" style="margin-right: 15px;"><i class="fas fa-shopping-cart"></i></a>
-                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode" style="background-color: transparent; border: 1px solid var(--border-color);">🌙</button>
-                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL" style="background-color: transparent; border: 1px solid var(--border-color);">⇄</button>
-            </div>
 
             <a href="index.html" class="sidebar-logout" id="logout-btn">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Logout</span>
             </a>
         </aside>
-        
+
         <!-- MAIN CONTENT -->
         <main class="main-content">
+            <div class="top-nav-actions"
+                style="display: flex; justify-content: flex-end; padding: 20px 40px; gap: 15px;">
+                <a href="cart.html" class="icon-btn" id="cart-icon" title="View Cart"
+                    style="background-color: var(--surface-color); border: 1px solid var(--border-color);"><i
+                        class="fas fa-shopping-cart"></i></a>
+                <button class="icon-btn" id="theme-toggle" title="Toggle Dark Mode"
+                    style="background-color: var(--surface-color); border: 1px solid var(--border-color);">🌙</button>
+                <button class="icon-btn" id="rtl-toggle" title="Toggle RTL"
+                    style="background-color: var(--surface-color); border: 1px solid var(--border-color);"><i
+                        class="fas fa-exchange-alt"></i></button>
+            </div>
             <!-- PROFILE SECTION -->
             <div id="profile" class="dashboard-section active">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
-                    
+
                     <div class="dash-mobile-header-text">
                         <h1 style="font-size: 28px; margin-bottom: 5px;">Welcome back, Jane.</h1>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Here is what's happening in your archive today.</p>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Here is what's happening in your
+                            archive today.</p>
                     </div>
                 </header>
 
                 <!-- METRICS GRID -->
                 <div class="metric-grid">
                     <div class="metric-card">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                             <span class="metric-title">Saved Items</span>
                             <i class="fa-solid fa-shirt" style="color: var(--secondary-color); font-size: 20px;"></i>
                         </div>
                         <div class="metric-value">12</div>
-                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+2</span> since last week</p>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span
+                                style="color: #4caf50;">+2</span> since last week</p>
                     </div>
                     <div class="metric-card">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                             <span class="metric-title">Wishlist</span>
                             <i class="fa-solid fa-heart" style="color: var(--secondary-color); font-size: 20px;"></i>
                         </div>
                         <div class="metric-value">45</div>
-                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span style="color: #4caf50;">+5</span> since last week</p>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;"><span
+                                style="color: #4caf50;">+5</span> since last week</p>
                     </div>
                     <div class="metric-card">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                             <span class="metric-title">New Arrivals Alerts</span>
                             <i class="fa-solid fa-bell" style="color: var(--secondary-color); font-size: 20px;"></i>
                         </div>
                         <div class="metric-value">3</div>
-                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;">Matching your preferences</p>
+                        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 10px;">Matching your
+                            preferences</p>
                     </div>
                 </div>
 
                 <!-- RECENT ACTIVITY / CARDS -->
                 <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
                     <!-- Wishlist Preview -->
-                    <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <div
+                        style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                             <h3 style="font-size: 20px;">Recently Added to Wishlist</h3>
-                            <a href="#" style="color: var(--secondary-color); font-weight: 500; font-size: 14px;">View All</a>
+                            <a href="#" style="color: var(--secondary-color); font-weight: 500; font-size: 14px;">View
+                                All</a>
                         </div>
-                        
+
                         <div class="grid-3-resp" style="gap: 20px;">
                             <div class="card" style="box-shadow: none;">
-                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=400&auto=format&fit=crop" alt="90s Slip Dress"></div>
+                                <div class="card-img-wrap"><img src="assets/images/wishlist-slip-dress.png"
+                                        alt="90s Slip Dress"></div>
                                 <div class="card-body" style="padding: 15px;">
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">90s Slip Dress</h4>
                                     <p style="color: var(--text-secondary); font-size: 13px;">$120</p>
                                 </div>
                             </div>
                             <div class="card" style="box-shadow: none;">
-                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=400&auto=format&fit=crop" alt="Leather Moto"></div>
+                                <div class="card-img-wrap"><img src="assets/images/wishlist-leather-moto.png"
+                                        alt="Leather Moto"></div>
                                 <div class="card-body" style="padding: 15px;">
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">Leather Moto</h4>
                                     <p style="color: var(--text-secondary); font-size: 13px;">$280</p>
                                 </div>
                             </div>
                             <div class="card" style="box-shadow: none;">
-                                <div class="card-img-wrap" style="aspect-ratio: 1/1;"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=400&auto=format&fit=crop" alt="Silk Scarf"></div>
+                                <div class="card-img-wrap"><img src="assets/images/wishlist-silk-scarf.png"
+                                        alt="Silk Scarf"></div>
                                 <div class="card-body" style="padding: 15px;">
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">Silk Scarf</h4>
                                     <p style="color: var(--text-secondary); font-size: 13px;">$45</p>
@@ -149,38 +160,51 @@
                     </div>
 
                     <!-- Suggested / Updates -->
-                    <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
+                    <div
+                        style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 30px;">
                         <h3 style="font-size: 20px; margin-bottom: 30px;">Curator Updates</h3>
-                        
+
                         <ul style="display: flex; flex-direction: column; gap: 20px;">
                             <li style="display: flex; gap: 15px; align-items: flex-start;">
-                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
                                     <i class="fa-solid fa-box-open"></i>
                                 </div>
                                 <div>
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">New Archive Drop Live</h4>
-                                    <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
-                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">2 hours ago</span>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing
+                                        collection is now live. Shop your early access.</p>
+                                    <span
+                                        style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">2
+                                        hours ago</span>
                                 </div>
                             </li>
                             <li style="display: flex; gap: 15px; align-items: flex-start;">
-                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
                                     <i class="fa-solid fa-tag"></i>
                                 </div>
                                 <div>
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">Price Drop Alert</h4>
-                                    <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
-                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">1 day ago</span>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist
+                                        (Vintage Trench) has dropped in price.</p>
+                                    <span
+                                        style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">1
+                                        day ago</span>
                                 </div>
                             </li>
                             <li style="display: flex; gap: 15px; align-items: flex-start;">
-                                <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
+                                <div
+                                    style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--hover-overlay); display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;">
                                     <i class="fa-solid fa-truck"></i>
                                 </div>
                                 <div>
                                     <h4 style="font-size: 14px; margin-bottom: 5px;">Order Delivered</h4>
-                                    <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered.</p>
-                                    <span style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">3 days ago</span>
+                                    <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has
+                                        been delivered.</p>
+                                    <span
+                                        style="font-size: 11px; color: var(--text-secondary); display: block; margin-top: 5px;">3
+                                        days ago</span>
                                 </div>
                             </li>
                         </ul>
@@ -191,38 +215,43 @@
             <!-- CLOSET SECTION -->
             <div id="closet" class="dashboard-section">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="dash-mobile-header-text">
                         <h2 style="font-size: 28px;">Your Virtual Archive</h2>
                     </div>
                 </header>
-                
+
                 <div class="closet-grid">
                     <div class="closet-item">
-                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Vintage Blazer">
+                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?q=80&w=400&auto=format&fit=crop"
+                            class="closet-img" alt="Vintage Blazer">
                         <div class="closet-details">
                             <h4 style="font-size: 14px;">1970s Wool Blazer</h4>
                             <p class="closet-date">Vault ID: #AR-1024 • Added Mar 2026</p>
                         </div>
                     </div>
                     <div class="closet-item">
-                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Statement Shirt">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop"
+                            class="closet-img" alt="Statement Shirt">
                         <div class="closet-details">
                             <h4 style="font-size: 14px;">Patterned Silk Shirt</h4>
                             <p class="closet-date">Vault ID: #AR-1056 • Added Feb 2026</p>
                         </div>
                     </div>
                     <div class="closet-item">
-                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Evening Gown">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&auto=format&fit=crop"
+                            class="closet-img" alt="Evening Gown">
                         <div class="closet-details">
                             <h4 style="font-size: 14px;">Velvet Evening Gown</h4>
                             <p class="closet-date">Vault ID: #AR-1089 • Added Jan 2026</p>
                         </div>
                     </div>
                     <div class="closet-item">
-                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400&auto=format&fit=crop" class="closet-img" alt="Knitwear">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400&auto=format&fit=crop"
+                            class="closet-img" alt="Knitwear">
                         <div class="closet-details">
                             <h4 style="font-size: 14px;">Hand-knit Mohair Cardigan</h4>
                             <p class="closet-date">Vault ID: #AR-1102 • Added Dec 2025</p>
@@ -254,7 +283,8 @@
             <!-- ORDERS SECTION (NEW) -->
             <div id="orders" class="dashboard-section">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="dash-mobile-header-text">
@@ -266,17 +296,23 @@
                         <div class="notification-icon"><i class="fa-solid fa-bag-shopping"></i></div>
                         <div style="flex-grow: 1;">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Order #CV-8923</h4>
-                            <p style="font-size: 13px; color: var(--text-secondary);">Delivered on Mar 25, 2026. Items: 1</p>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Delivered on Mar 25, 2026. Items:
+                                1</p>
                         </div>
-                        <button class="btn btn-secondary" style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">View Order</button>
+                        <button class="btn btn-secondary"
+                            style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">View
+                            Order</button>
                     </div>
                     <div class="notification-item">
                         <div class="notification-icon"><i class="fa-solid fa-truck"></i></div>
                         <div style="flex-grow: 1;">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Order #CV-8750</h4>
-                            <p style="font-size: 13px; color: var(--text-secondary);">Shipped. Estimated arrival: Tomorrow.</p>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Shipped. Estimated arrival:
+                                Tomorrow.</p>
                         </div>
-                        <button class="btn btn-secondary" style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">Track Order</button>
+                        <button class="btn btn-secondary"
+                            style="height: 35px; text-transform: none; font-size: 12px; letter-spacing: 0;">Track
+                            Order</button>
                     </div>
                 </div>
             </div>
@@ -284,7 +320,8 @@
             <!-- WISHLIST SECTION (REDESIGNED) -->
             <div id="wishlist" class="dashboard-section">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="dash-mobile-header-text">
@@ -293,34 +330,38 @@
                 </header>
                 <div class="wishlist-table">
                     <div class="wishlist-row">
-                        <img src="https://images.unsplash.com/photo-1582142306909-195724d33ffc?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="90s Slip Dress">
+                        <img src="assets/images/wishlist-slip-dress.png" class="wishlist-img" alt="90s Slip Dress">
                         <div class="wishlist-info">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">90s Slip Dress</h4>
                             <p style="font-size: 13px; color: var(--text-secondary);">Womenswear • Silk</p>
                         </div>
                         <span class="wishlist-price">$120</span>
                         <span class="wishlist-status status-low-stock">Only 1 Left</span>
-                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to
+                            Cart</button>
                     </div>
                     <div class="wishlist-row">
-                        <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="Leather Moto">
+                        <img src="assets/images/wishlist-leather-moto.png" class="wishlist-img" alt="Leather Moto">
                         <div class="wishlist-info">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Leather Moto Jacket</h4>
                             <p style="font-size: 13px; color: var(--text-secondary);">Outerwear • Distressed Leather</p>
                         </div>
                         <span class="wishlist-price">$280</span>
                         <span class="wishlist-status status-in-stock">In Stock</span>
-                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to
+                            Cart</button>
                     </div>
                     <div class="wishlist-row">
-                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400&auto=format&fit=crop" class="wishlist-img" alt="Vintage Trench">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400&auto=format&fit=crop"
+                            class="wishlist-img" alt="Vintage Trench">
                         <div class="wishlist-info">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Double-Breasted Trench</h4>
                             <p style="font-size: 13px; color: var(--text-secondary);">Outerwear • Cotton Gabardine</p>
                         </div>
                         <span class="wishlist-price">$350</span>
                         <span class="wishlist-status status-in-stock">In Stock</span>
-                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to Cart</button>
+                        <button class="btn btn-primary" style="height: 40px; padding: 0 15px; font-size: 12px;">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -328,7 +369,8 @@
             <!-- NOTIFICATIONS SECTION -->
             <div id="notifications" class="dashboard-section">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="dash-mobile-header-text">
@@ -340,7 +382,8 @@
                         <div class="notification-icon"><i class="fa-solid fa-box-open"></i></div>
                         <div style="flex-grow: 1;">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">New Archive Drop Live</h4>
-                            <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing collection is now live. Shop your early access.</p>
+                            <p style="font-size: 13px; color: var(--text-secondary);">The 1980s Power Dressing
+                                collection is now live. Shop your early access.</p>
                         </div>
                         <span style="font-size: 12px; color: var(--text-secondary);">2h ago</span>
                     </div>
@@ -348,7 +391,8 @@
                         <div class="notification-icon"><i class="fa-solid fa-tag"></i></div>
                         <div style="flex-grow: 1;">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Price Drop Alert</h4>
-                            <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage Trench) has dropped in price.</p>
+                            <p style="font-size: 13px; color: var(--text-secondary);">An item on your wishlist (Vintage
+                                Trench) has dropped in price.</p>
                         </div>
                         <span style="font-size: 12px; color: var(--text-secondary);">1d ago</span>
                     </div>
@@ -356,7 +400,8 @@
                         <div class="notification-icon"><i class="fa-solid fa-truck"></i></div>
                         <div style="flex-grow: 1;">
                             <h4 style="font-size: 15px; margin-bottom: 5px;">Order Delivered</h4>
-                            <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been delivered to your NYC address.</p>
+                            <p style="font-size: 13px; color: var(--text-secondary);">Your order #CV-8923 has been
+                                delivered to your NYC address.</p>
                         </div>
                         <span style="font-size: 12px; color: var(--text-secondary);">3d ago</span>
                     </div>
@@ -366,7 +411,8 @@
             <!-- SETTINGS SECTION -->
             <div id="settings" class="dashboard-section">
                 <header class="dash-header">
-                    <button class="menu-toggle" style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
+                    <button class="menu-toggle"
+                        style="display: none; background: var(--surface-color); width: 40px; height: 40px; border-radius: var(--border-radius); border: 1px solid var(--border-color);">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="dash-mobile-header-text">
@@ -375,7 +421,9 @@
                 </header>
                 <div class="settings-grid">
                     <div class="settings-card">
-                        <h3 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Personal Information</h3>
+                        <h3
+                            style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                            Personal Information</h3>
                         <form style="display: flex; flex-direction: column; gap: 15px;">
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label class="form-label">Full Name</label>
@@ -385,11 +433,14 @@
                                 <label class="form-label">Email Address</label>
                                 <input type="email" class="form-control" value="jane.doe@example.com">
                             </div>
-                            <button class="btn btn-primary" style="width: fit-content; height: 40px; margin-top: 10px;">Save Changes</button>
+                            <button class="btn btn-primary"
+                                style="width: fit-content; height: 40px; margin-top: 10px;">Save Changes</button>
                         </form>
                     </div>
                     <div class="settings-card">
-                        <h3 style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Security</h3>
+                        <h3
+                            style="font-size: 18px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                            Security</h3>
                         <form style="display: flex; flex-direction: column; gap: 15px;">
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label class="form-label">Current Password</label>
@@ -399,7 +450,8 @@
                                 <label class="form-label">New Password</label>
                                 <input type="password" class="form-control" placeholder="Enter new password">
                             </div>
-                            <button class="btn btn-primary" style="width: fit-content; height: 40px; margin-top: 10px;">Update Password</button>
+                            <button class="btn btn-primary"
+                                style="width: fit-content; height: 40px; margin-top: 10px;">Update Password</button>
                         </form>
                     </div>
                 </div>
@@ -517,7 +569,9 @@
                 margin-bottom: 25px;
             }
 
-            .menu-toggle { display: flex !important; }
+            .menu-toggle {
+                display: flex !important;
+            }
 
             .dash-mobile-header-text {
                 flex-grow: 1;
@@ -525,12 +579,22 @@
             }
 
             /* Stack grids one by one */
-            .grid-3-resp, 
             .insight-grid,
             .closet-grid,
-            .settings-grid { 
-                grid-template-columns: 1fr !important; 
+            .settings-grid {
+                grid-template-columns: 1fr !important;
                 gap: 20px !important;
+            }
+
+            .grid-3-resp {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+
+            .grid-3-resp>*:nth-child(3) {
+                grid-column: 1 / span 2;
+                justify-self: center;
+                width: calc(50% - 10px) !important;
             }
 
             /* Stack wishlist rows one by one */
@@ -547,8 +611,8 @@
                 height: 120px !important;
             }
 
-            .wishlist-info, 
-            .wishlist-price, 
+            .wishlist-info,
+            .wishlist-price,
             .wishlist-status {
                 margin-right: 0 !important;
                 width: 100% !important;
@@ -563,9 +627,14 @@
                 margin: 0 auto !important;
             }
 
-            .sidebar-user { display: inline-flex !important; }
-            .sidebar.active .sidebar-user { display: inline-flex !important; }
-            
+            .sidebar-user {
+                display: inline-flex !important;
+            }
+
+            .sidebar.active .sidebar-user {
+                display: inline-flex !important;
+            }
+
             /* ... removed the broken .grid-template-columns selector ... */
 
             /* ---- RTL at 768px ---- */
@@ -616,21 +685,102 @@
         }
 
         /* Closet centering on tablet */
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media (min-width: 769px) and (max-width: 1024px) {
             #closet .closet-grid {
                 display: flex !important;
                 flex-wrap: wrap !important;
                 justify-content: center !important;
                 gap: 20px !important;
             }
+
             #closet .closet-item {
                 flex: 0 1 200px !important;
                 min-width: 250px !important;
             }
+
+            /* Center the 3rd metric card (New Arrivals Alerts) */
+            .metric-grid .metric-card:nth-child(3) {
+                grid-column: 1 / span 2;
+                justify-self: center;
+                width: calc(50% - 15px);
+            }
+        }
+
+        /* --- New Top Nav Actions --- */
+        .top-nav-actions {
+            background-color: transparent;
+            z-index: 100;
+        }
+
+        @media (max-width: 1024px) {
+            .top-nav-actions {
+                padding: 15px 20px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav-actions {
+                padding: 10px 15px !important;
+                gap: 10px !important;
+            }
+
+            .top-nav-actions .icon-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+
+        /* --- Fix Image Fit & Alignment --- */
+        .card-img-wrap img,
+        .closet-img,
+        .wishlist-table .wishlist-img {
+            object-fit: cover !important;
+        }
+
+        .card-img-wrap img,
+        .closet-img {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .card-img-wrap,
+        .closet-item {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background-color: var(--border-color);
+        }
+
+        /* Restore 1-column for mobile under 576px to prevent layout disturbance */
+        @media (max-width: 576px) {
+            .grid-3-resp {
+                grid-template-columns: 1fr !important;
+            }
+
+            .grid-3-resp>*:nth-child(3) {
+                grid-column: auto !important;
+                width: 100% !important;
+            }
         }
     </style>
-    
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/dashboard.js"></script>
+    <script>
+        // Force Bright/Light Mode whenever entering the dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false');
+
+            // Sync icons to reflect light mode
+            const themeBtn = document.getElementById('theme-toggle');
+            const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+            if (themeBtn) themeBtn.innerHTML = '🌙';
+            if (mobileThemeBtn) {
+                mobileThemeBtn.innerHTML = '<i class="fas fa-moon"></i><span>DARK MODE</span>';
+            }
+        });
+    </script>
 </body>
+
 </html>

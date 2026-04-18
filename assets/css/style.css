@@ -37,8 +37,8 @@ GLOBAL VARIABLES
   --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* Dark Theme overrides via class */
 body.dark-mode {
+  --primary-color: #b67789;
   --bg-color: #121212;
   --surface-color: #1e1e1e;
   --text-primary: #f0f0f0;
@@ -49,6 +49,11 @@ body.dark-mode {
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced Login Readability */
+.dark-mode .auth-card a {
+  font-weight: 700 !important;
 }
 
 /* 
@@ -67,6 +72,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
+  letter-spacing: -0.2px;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
 }
@@ -129,7 +135,7 @@ BUTTONS
   font-family: var(--font-body);
   height: 48px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
@@ -233,7 +239,7 @@ NAVBAR
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
   position: relative;
   white-space: nowrap;
 }
@@ -375,7 +381,7 @@ FOOTER
   font-size: 18px;
   margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .footer-widget .brand-logo {
@@ -601,7 +607,7 @@ HERO SECTIONS
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.6) 100%);
+  background: rgba(0, 0, 0, 0.45); /* Darker consistent overlay */
   z-index: 2;
 }
 
@@ -619,9 +625,14 @@ HERO SECTIONS
   position: relative;
   z-index: 10;
   color: #fff;
-  max-width: 800px;
+  max-width: 850px;
   text-align: center;
   margin: 0 auto;
+  padding: 50px 40px;
+  background: rgba(0, 0, 0, 0.4); /* Subtle black background for text */
+  backdrop-filter: blur(8px); /* Modern blur effect */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-content .btn {
@@ -637,7 +648,9 @@ HERO SECTIONS
 .hero-subtitle {
   font-size: 18px;
   margin-bottom: 40px;
-  font-weight: 300;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Premium Hero (Home 2) */
@@ -950,7 +963,7 @@ DASHBOARD
   color: var(--text-secondary);
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   margin-bottom: 15px;
 }
 
@@ -1142,7 +1155,7 @@ RESPONSIVE
       justify-content: center;
       font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.2px;
       text-transform: uppercase;
       color: var(--text-primary);
       transition: var(--transition);
@@ -1223,6 +1236,11 @@ RESPONSIVE
 
   .hero-premium .hero-title {
     font-size: 44px;
+  }
+
+  .hero-content {
+    padding: 30px 20px;
+    width: 95%;
   }
 
   /* Dashboard Mobile */
@@ -1514,7 +1532,7 @@ DASHBOARD ENHANCED STYLES
 .insight-label {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: var(--text-secondary);
 }
 
