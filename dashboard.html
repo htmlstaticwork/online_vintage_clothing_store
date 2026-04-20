@@ -50,6 +50,22 @@
                 </a>
             </nav>
 
+            <!-- MOBILE ACTIONS (Icons moved inside menu) -->
+            <div class="sidebar-mobile-actions" style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 20px; display: none;">
+                <a href="cart.html" class="sidebar-link" id="cart-link-mobile">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>CART</span>
+                </a>
+                <a href="#" class="sidebar-link" id="mobile-theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>DARK MODE</span>
+                </a>
+                <a href="#" class="sidebar-link" id="mobile-rtl-toggle">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>RTL TOGGLE</span>
+                </a>
+            </div>
+
 
             <a href="index.html" class="sidebar-logout" id="logout-btn">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -471,6 +487,20 @@
                 justify-content: center;
                 flex-shrink: 0;
                 order: 0;
+            }
+
+            /* Hide top-nav actions and show sidebar actions on mobile/tablet */
+            .top-nav-actions {
+                display: none !important;
+            }
+
+            .sidebar-mobile-actions {
+                display: block !important;
+            }
+
+            /* Fix alignment gap for icons updated by main.js */
+            .sidebar-link i {
+                margin-right: 0 !important;
             }
 
             /* Header row: hamburger | title */
